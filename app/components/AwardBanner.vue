@@ -9,14 +9,9 @@ import { SITE } from '~/data/site'
 <template>
   <section class="overflow-hidden rounded-3xl bg-goose-deep text-cream shadow-lg">
     <div class="grid md:grid-cols-2">
-      <div class="relative flex min-h-56 items-center justify-center bg-gradient-to-br from-goose to-goose-deep">
+      <div class="min-h-56">
         <!-- Placeholder for /images/award.jpg -->
-        <div class="text-center opacity-80">
-          <svg viewBox="0 0 24 24" class="mx-auto h-16 w-16 text-gold" fill="currentColor" aria-hidden="true">
-            <path d="M12 1.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 16.98l-5.8 3.05 1.11-6.46-4.7-4.58 6.49-.94L12 1.5z" />
-          </svg>
-          <p class="mt-2 text-sm text-cream/70">金牌獎盃照片</p>
-        </div>
+        <PlaceholderImage variant="medal" label="金牌獎盃照片" :pending="true" />
       </div>
 
       <div class="flex flex-col justify-center gap-3 p-8">

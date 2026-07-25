@@ -16,13 +16,13 @@ defineProps<{ slides: Slide[] }>()
         :key="slide.name"
         class="snap-start shrink-0 basis-64 sm:basis-72"
       >
-        <div
-          class="flex h-40 items-end rounded-2xl bg-gradient-to-br from-goose to-goose-deep p-4 text-cream shadow-sm"
-        >
-          <!-- TODO: swap gradient for real dish photography. -->
-          <div>
-            <p class="font-serif text-xl font-bold">{{ slide.name }}</p>
-            <p class="text-sm text-cream/80">{{ slide.note }}</p>
+        <div class="overflow-hidden rounded-2xl shadow-sm">
+          <div class="h-40">
+            <PlaceholderImage variant="dish" :pending="true" />
+          </div>
+          <div class="bg-white/70 p-4">
+            <p class="font-serif text-lg font-bold text-goose">{{ slide.name }}</p>
+            <p class="text-sm text-neutral-600">{{ slide.note }}</p>
           </div>
         </div>
       </li>
