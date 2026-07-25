@@ -28,11 +28,11 @@ const homeFaq = FAQ.slice(0, 3)
         src="/images/hero-bg.jpg"
         alt="鵝邸家 2023 金牌燒鵝爭霸賽 金牌獎"
         fetchpriority="high"
-        class="absolute inset-0 h-full w-full object-cover object-center"
+        class="absolute inset-0 h-full w-full object-cover object-[center_25%]"
       />
-      <!-- Overlays for text legibility over the photo. -->
-      <div class="absolute inset-0 bg-gradient-to-r from-goose-deep/95 via-goose-deep/80 to-goose-deep/45" />
-      <div class="absolute inset-0 bg-gradient-to-t from-goose-deep/75 to-transparent" />
+      <!-- Overlays for text legibility — neutral dark, weighted left (not a red wash). -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
+      <div class="absolute inset-0 bg-gradient-to-t from-goose-deep/45 to-transparent" />
 
       <div class="container-page relative py-24 md:py-32">
         <div class="max-w-xl">
