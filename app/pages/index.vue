@@ -45,8 +45,8 @@ const homeFaq = FAQ.slice(0, 3)
             僅提供來店享用與外帶自取，只為那一口剛出爐的酥脆。
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
-            <LineButton />
-            <NuxtLink to="/menu" class="btn-primary">查看菜單</NuxtLink>
+            <LineButton variant="light" />
+            <NuxtLink to="/menu" class="btn-outline-light">查看菜單</NuxtLink>
           </div>
         </div>
       </div>

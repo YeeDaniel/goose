@@ -22,15 +22,24 @@
     @apply min-h-touch min-w-touch inline-flex items-center justify-center;
   }
 
-  /* Secondary action — brand red. */
+  /* Solid brand-red — primary CTA on light backgrounds. */
   .btn-primary {
-    @apply tap-target rounded-full bg-goose px-6 py-3 font-bold text-cream shadow-sm transition hover:bg-goose-deep focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2;
+    @apply tap-target gap-2 rounded-full bg-goose px-6 py-3 font-bold text-cream shadow-sm transition hover:bg-goose-deep focus:outline-none focus:ring-2 focus:ring-goose focus:ring-offset-2;
   }
 
-  /* Primary conversion (LINE) — championship gold, ties to the 金牌 theme and
-     avoids clashing green-next-to-red. */
-  .btn-line {
-    @apply tap-target gap-2 rounded-full bg-gold px-6 py-3 font-bold text-goose-deep shadow-sm transition hover:bg-[#c69f2c] focus:outline-none focus:ring-2 focus:ring-goose focus:ring-offset-2;
+  /* Outlined red — secondary on light backgrounds. */
+  .btn-ghost {
+    @apply tap-target gap-2 rounded-full border-2 border-goose px-6 py-2.5 font-bold text-goose transition hover:bg-goose/10 focus:outline-none focus:ring-2 focus:ring-goose focus:ring-offset-2;
+  }
+
+  /* Solid cream — CTA on red / photo backgrounds. */
+  .btn-light {
+    @apply tap-target gap-2 rounded-full bg-cream px-6 py-3 font-bold text-goose shadow-sm transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-cream focus:ring-offset-2;
+  }
+
+  /* Outlined cream — secondary on red / photo backgrounds. */
+  .btn-outline-light {
+    @apply tap-target gap-2 rounded-full border-2 border-cream/80 px-6 py-2.5 font-bold text-cream transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cream focus:ring-offset-2;
   }
 
   .container-page {

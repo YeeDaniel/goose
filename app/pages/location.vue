@@ -49,7 +49,7 @@ useFaqJsonLd(FAQ)
           </div>
         </dl>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a :href="SITE.mapsDirectionsUrl" target="_blank" rel="noopener" class="btn-primary">
+          <a :href="SITE.mapsDirectionsUrl" target="_blank" rel="noopener" class="btn-ghost">
             導航到店
           </a>
           <LineButton />

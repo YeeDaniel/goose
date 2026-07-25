@@ -15,10 +15,6 @@ useMenuJsonLd()
   <div class="container-page py-14">
     <SectionHeading title="美味菜單" subtitle="金牌燒鵝 · 叉燒 · 滷水類 · 小菜" />
 
-    <div class="mb-12 h-48 overflow-hidden rounded-3xl shadow-sm sm:h-64">
-      <PlaceholderImage src="/images/goose-half.jpg" alt="金牌燒鵝切盤" />
-    </div>
-
     <div class="space-y-12">
       <section v-for="cat in MENU" :key="cat.id" :id="cat.id" class="scroll-mt-20">
         <h2 class="mb-4 flex items-center gap-3 font-serif text-2xl font-bold text-goose">

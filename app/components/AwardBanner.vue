@@ -7,7 +7,7 @@ import { SITE } from '~/data/site'
 </script>
 
 <template>
-  <section class="overflow-hidden rounded-3xl bg-goose-deep text-cream shadow-lg">
+  <section class="overflow-hidden rounded-3xl bg-goose text-cream shadow-lg">
     <div class="grid md:grid-cols-2">
       <div class="min-h-56">
         <PlaceholderImage src="/images/award.jpg" :alt="`${SITE.awardCompetition} 金牌領獎`" variant="medal" />
@@ -21,7 +21,7 @@ import { SITE } from '~/data/site'
           {{ SITE.award }}。一隻燒鵝，燒出十年匠心與三連霸的實力。
         </p>
         <div>
-          <LineButton label="LINE 預訂金牌燒鵝" />
+          <LineButton label="LINE 預訂金牌燒鵝" variant="light" />
         </div>
       </div>
     </div>

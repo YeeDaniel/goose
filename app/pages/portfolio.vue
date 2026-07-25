@@ -34,8 +34,8 @@ const highlights = [
 
     <ul class="grid gap-6 md:grid-cols-2">
       <li v-for="item in highlights" :key="item.title" class="overflow-hidden rounded-2xl bg-white/60 shadow-sm">
-        <div class="aspect-[4/3] bg-neutral-100">
-          <PlaceholderImage variant="goose" fit="contain" :src="item.img" :alt="item.title" :pending="true" />
+        <div class="aspect-[4/3]">
+          <PlaceholderImage variant="goose" :src="item.img" :alt="item.title" :pending="true" />
         </div>
         <div class="p-5">
           <h3 class="font-serif text-lg font-bold text-goose">{{ item.title }}</h3>

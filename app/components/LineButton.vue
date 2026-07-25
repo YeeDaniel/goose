@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { SITE } from '~/data/site'
 
-// Reusable LINE CTA link (O2O). Opens the LINE Official Account.
-withDefaults(defineProps<{ label?: string; block?: boolean }>(), {
+// LINE CTA link (O2O). `variant`: solid (red, on light bg) | light (cream, on red/photo bg).
+withDefaults(defineProps<{ label?: string; block?: boolean; variant?: 'solid' | 'light' }>(), {
   label: 'LINE 預約／點餐',
   block: false,
+  variant: 'solid',
 })
 </script>
 
@@ -13,8 +14,7 @@ withDefaults(defineProps<{ label?: string; block?: boolean }>(), {
     :href="SITE.lineUrl"
     target="_blank"
     rel="noopener"
-    class="btn-line"
-    :class="{ 'w-full': block }"
+    :class="[variant === 'light' ? 'btn-light' : 'btn-primary', { 'w-full': block }]"
     aria-label="開啟 LINE 官方帳號預約或點餐"
   >
     <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">

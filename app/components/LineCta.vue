@@ -10,7 +10,7 @@ import { SITE } from '~/data/site'
     :href="SITE.lineUrl"
     target="_blank"
     rel="noopener"
-    class="btn-line fixed right-4 bottom-24 z-40 shadow-lg md:bottom-6"
+    class="btn-primary fixed right-4 bottom-24 z-40 shadow-lg md:bottom-6"
     aria-label="開啟 LINE 官方帳號預約或點餐"
   >
     <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">

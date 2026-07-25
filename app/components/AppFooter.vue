@@ -3,7 +3,7 @@ import { SITE } from '~/data/site'
 </script>
 
 <template>
-  <footer class="border-t border-black/5 bg-goose-deep text-cream/90">
+  <footer class="border-t border-black/5 bg-goose text-cream/90">
     <div class="container-page grid gap-6 py-10 sm:grid-cols-3">
       <div>
         <p class="font-serif text-xl font-bold text-gold">{{ SITE.name }}</p>
@@ -25,7 +25,7 @@ import { SITE } from '~/data/site'
         <p class="mt-2 text-cream/80">電話：{{ SITE.phone }}</p>
         <p class="text-cream/80">{{ SITE.address.region }}{{ SITE.address.locality }}{{ SITE.address.street }}</p>
         <div class="mt-4">
-          <LineButton />
+          <LineButton variant="light" />
         </div>
         <a
           v-if="SITE.facebookUrl"
