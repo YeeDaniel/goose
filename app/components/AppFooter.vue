@@ -27,6 +27,15 @@ import { SITE } from '~/data/site'
         <div class="mt-4">
           <LineButton />
         </div>
+        <a
+          v-if="SITE.facebookUrl"
+          :href="SITE.facebookUrl"
+          target="_blank"
+          rel="noopener"
+          class="mt-3 inline-block text-sm text-cream/80 underline-offset-4 hover:text-gold hover:underline"
+        >
+          Facebook 粉絲專頁 →
+        </a>
       </div>
     </div>
 

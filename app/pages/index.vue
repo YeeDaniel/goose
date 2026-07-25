@@ -42,10 +42,20 @@ const homeFaq = FAQ.slice(0, 3)
       </div>
     </section>
 
+    <!-- LINE rich-menu style quick actions (from EdiHome). -->
+    <section class="container-page py-10">
+      <QuickActions />
+    </section>
+
     <!-- Signature carousel. -->
     <section class="container-page py-14">
       <SectionHeading title="招牌推薦" subtitle="金牌燒鵝、蜜汁叉燒、精滷滷味" />
       <DishCarousel :slides="signatures" />
+    </section>
+
+    <!-- 金牌燒鵝爭霸賽 award banner (from EdiHome). -->
+    <section class="container-page pb-4">
+      <AwardBanner />
     </section>
 
     <!-- Brand story teaser. -->

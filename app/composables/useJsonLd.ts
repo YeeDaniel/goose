@@ -32,7 +32,7 @@ export function useRestaurantJsonLd() {
       name: SITE.name,
       alternateName: SITE.nameEn,
       description: SITE.description,
-      servesCuisine: '燒鵝、叉燒、滷味',
+      servesCuisine: '港式燒味、燒鵝、叉燒、滷味',
       url: SITE.url,
       telephone: SITE.phoneE164,
       address: {

@@ -36,6 +36,10 @@ const milestones = [
       </li>
     </ol>
 
+    <div class="mx-auto mt-12 max-w-4xl">
+      <AwardBanner />
+    </div>
+
     <div class="mt-12 rounded-2xl bg-white/60 p-8 text-center shadow-sm">
       <p class="text-lg text-neutral-700">想品嚐三連霸金牌燒鵝？</p>
       <div class="mt-4 flex justify-center">

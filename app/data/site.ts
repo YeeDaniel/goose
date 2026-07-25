@@ -4,15 +4,21 @@
 
 export const SITE = {
   name: '鵝邸家',
-  nameEn: 'Goose Family',
+  fullName: '鵝邸家燒鵝專賣',
+  // English name carried over from the EdiHome storefront.
+  nameEn: 'Roasted Goose',
+  cuisine: '港式燒味',
   tagline: '2023-2025 連續三年金牌得主',
   description:
-    '鵝邸家 — 郭芳銘主廚十年匠心，2023-2025 連續三年金牌燒鵝得主。堅持出爐脆度與多汁口感，僅提供來店享用與外帶自取。',
+    '鵝邸家燒鵝專賣 — 郭芳銘主廚十年匠心，港式燒味，2023-2025 連續三年金牌燒鵝得主。堅持出爐脆度與多汁口感，僅提供來店享用與外帶自取。',
 
   // Brand facts used for entity linking (SAO).
   chef: '郭芳銘',
   yearsOfCraft: 10,
   award: '2023-2025 連續三年金牌得主',
+  // 金牌燒鵝爭霸賽 credential (from EdiHome award hero).
+  awardCompetition: '金牌燒鵝爭霸賽',
+  awardPrize: 'NT$ 18,000 金牌獎',
 
   // Contact / location (NAP) — owner confirmed.
   phone: '0988-844-688',
@@ -49,6 +55,8 @@ export const SITE = {
 
   // LINE Official Account — single global conversion target (O2O).
   lineUrl: 'https://lin.ee/vsPOQej',
+  // Facebook page (from EdiHome LINE rich-menu) — TODO: real URL.
+  facebookUrl: '',
 
   // Canonical site URL — TODO.
   url: 'https://www.example.com',
