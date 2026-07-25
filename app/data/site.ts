@@ -55,8 +55,8 @@ export const SITE = {
 
   // LINE Official Account — single global conversion target (O2O).
   lineUrl: 'https://lin.ee/vsPOQej',
-  // Facebook page (from EdiHome LINE rich-menu) — TODO: real URL.
-  facebookUrl: '',
+  // Facebook — TODO: replace this search link with the real page URL (facebook.com/<page>).
+  facebookUrl: 'https://www.facebook.com/search/top?q=%E9%B5%9D%E9%82%B8%E5%AE%B6%E7%87%92%E9%B5%9D%E5%B0%88%E8%B3%A3',
 
   // Canonical site URL — TODO.
   url: 'https://www.example.com',
