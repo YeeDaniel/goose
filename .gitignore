@@ -1,0 +1,24 @@
+# Nuxt
+.nuxt
+.output
+.data
+dist
+.nitro
+.cache
+
+# Dependencies
+node_modules
+
+# Cloudflare / Wrangler
+.wrangler
+
+# Logs & env
+*.log
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.DS_Store
+.vscode/*
+!.vscode/extensions.json

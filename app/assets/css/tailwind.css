@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-neutral-800 font-sans antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  /* Minimum accessible tap target — design-spec §2.2 (>=44x44px). */
+  .tap-target {
+    @apply min-h-touch min-w-touch inline-flex items-center justify-center;
+  }
+
+  .btn-primary {
+    @apply tap-target rounded-full bg-goose px-6 py-3 font-semibold text-cream shadow-sm transition hover:bg-goose-deep focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2;
+  }
+
+  .btn-line {
+    @apply tap-target gap-2 rounded-full bg-line px-6 py-3 font-semibold text-white shadow-sm transition hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2;
+  }
+
+  .container-page {
+    @apply mx-auto w-full max-w-screen-lg px-4;
+  }
+}
