@@ -26,9 +26,9 @@ const homeFaq = FAQ.slice(0, 3)
     <section class="relative overflow-hidden text-cream">
       <img
         src="/images/hero-bg.jpg"
-        alt="鵝邸家 2023 金牌燒鵝爭霸賽 金牌獎"
+        alt="鵝邸家 金牌燒鵝 現烤吊掛"
         fetchpriority="high"
-        class="absolute inset-0 h-full w-full object-cover object-[center_25%]"
+        class="absolute inset-0 h-full w-full object-cover object-center"
       />
       <!-- Overlays for text legibility — neutral dark, weighted left (not a red wash). -->
       <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
