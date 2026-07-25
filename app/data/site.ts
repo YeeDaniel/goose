@@ -14,24 +14,24 @@ export const SITE = {
   yearsOfCraft: 10,
   award: '2023-2025 連續三年金牌得主',
 
-  // Contact / location (NAP) — TODO: replace with real data.
-  phone: '+886-0-0000-0000',
+  // Contact / location (NAP) — owner confirmed.
+  phone: '0988-844-688',
+  phoneE164: '+886988844688',
   address: {
-    street: 'TODO 地址街道',
-    locality: 'TODO 城市',
-    region: 'TODO 縣市',
-    postalCode: 'TODO',
+    street: '新政路25號',
+    locality: '大甲區',
+    region: '臺中市',
+    postalCode: '437',
     country: 'TW',
   },
   geo: {
-    // TODO: real coordinates
-    latitude: 25.033964,
-    longitude: 121.564468,
+    latitude: 24.347744,
+    longitude: 120.626421,
   },
-  // Google Maps embed / directions — TODO: replace with real place URL.
-  mapsEmbedUrl:
-    'https://www.google.com/maps?q=TODO+鵝邸家&output=embed',
-  mapsDirectionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=TODO+鵝邸家',
+  // Google Maps — resolved place: 鵝邸家燒鵝專賣.
+  mapsPlaceUrl: 'https://maps.app.goo.gl/1tL6KqoGVZ9afdb87',
+  mapsEmbedUrl: 'https://maps.google.com/maps?q=24.347744,120.626421&z=17&output=embed',
+  mapsDirectionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=24.347744,120.626421',
 
   // Opening hours — owner confirmed: 週六、週日 07:00–12:00 (售完為止)。
   openingHours: [

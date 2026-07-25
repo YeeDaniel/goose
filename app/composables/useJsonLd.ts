@@ -34,7 +34,7 @@ export function useRestaurantJsonLd() {
       description: SITE.description,
       servesCuisine: '燒鵝、叉燒、滷味',
       url: SITE.url,
-      telephone: SITE.phone,
+      telephone: SITE.phoneE164,
       address: {
         '@type': 'PostalAddress',
         streetAddress: SITE.address.street,
@@ -48,6 +48,7 @@ export function useRestaurantJsonLd() {
         latitude: SITE.geo.latitude,
         longitude: SITE.geo.longitude,
       },
+      hasMap: SITE.mapsPlaceUrl,
       openingHoursSpecification: openingHours,
       award: SITE.award,
       founder: { '@type': 'Person', name: SITE.chef },
