@@ -21,11 +21,11 @@ const nav = [
     <div class="container-page flex h-16 items-center justify-between">
       <NuxtLink to="/" class="flex items-baseline gap-2" :aria-label="`${SITE.name} 首頁`">
         <span class="font-serif text-2xl font-bold text-goose">{{ SITE.name }}</span>
-        <span class="hidden text-xs text-gold sm:inline">{{ SITE.tagline }}</span>
+        <span class="hidden text-xs text-gold xl:inline">{{ SITE.tagline }}</span>
       </NuxtLink>
 
-      <!-- Desktop nav (md+). -->
-      <nav class="hidden items-center gap-6 md:flex" aria-label="主要導覽">
+      <!-- Desktop nav (lg+). Below lg the 5 long CN links + LINE button crowd. -->
+      <nav class="hidden items-center gap-6 lg:flex" aria-label="主要導覽">
         <NuxtLink
           v-for="item in nav"
           :key="item.to"
@@ -38,9 +38,9 @@ const nav = [
         <LineButton />
       </nav>
 
-      <!-- Mobile hamburger (<md). -->
+      <!-- Hamburger (<lg). -->
       <DisclosureButton
-        class="tap-target -mr-2 rounded-lg text-goose md:hidden"
+        class="tap-target -mr-2 rounded-lg text-goose lg:hidden"
         :aria-label="open ? '關閉選單' : '開啟選單'"
       >
         <XMarkIcon v-if="open" class="h-6 w-6" aria-hidden="true" />
@@ -48,8 +48,8 @@ const nav = [
       </DisclosureButton>
     </div>
 
-    <!-- Mobile dropdown panel. -->
-    <DisclosurePanel class="border-t border-black/5 bg-cream/95 backdrop-blur md:hidden">
+    <!-- Dropdown panel (<lg). -->
+    <DisclosurePanel class="border-t border-black/5 bg-cream/95 backdrop-blur lg:hidden">
       <nav class="container-page flex flex-col py-2" aria-label="主要導覽">
         <NuxtLink
           v-for="item in nav"
