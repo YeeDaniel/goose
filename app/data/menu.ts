@@ -63,7 +63,13 @@ export const MENU: MenuCategory[] = [
       { name: '滷水鵝翅', description: '滷汁慢浸入味，膠質豐富。', price: 110, unit: '3 隻' },
       { name: '滷水鴨翅', description: '骨邊肉軟嫩，越啃越香。', price: 110, unit: '4 隻' },
       { name: '綜合拼盤（鵝胗＋鵝肝）', description: '鵝胗脆彈、鵝肝綿密，一次雙享。', price: 100, unit: '盒' },
-      { name: '滷筍絲', description: '吸附滷香的爽口筍絲，解膩配菜。', price: 50, unit: '包' },
+    ],
+  },
+  {
+    id: 'side',
+    name: '小菜',
+    dishes: [
+      { name: '筍絲', description: '爽口筍絲，解膩清爽的最佳配菜。', price: 50, unit: '包' },
     ],
   },
 ]

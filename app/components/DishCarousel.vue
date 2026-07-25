@@ -11,19 +11,19 @@ defineProps<{ slides: Slide[] }>()
 
 <template>
   <div class="-mx-4 overflow-x-auto px-4 pb-2">
-    <ul class="flex snap-x snap-mandatory gap-4">
+    <ul class="flex snap-x snap-mandatory items-stretch gap-4">
       <li
         v-for="slide in slides"
         :key="slide.name"
-        class="snap-start shrink-0 basis-64 sm:basis-72"
+        class="flex shrink-0 basis-72 snap-start sm:basis-80"
       >
-        <div class="overflow-hidden rounded-2xl shadow-sm">
-          <div class="h-40">
+        <div class="flex w-full flex-col overflow-hidden rounded-2xl shadow-sm">
+          <div class="aspect-[4/3]">
             <PlaceholderImage variant="dish" :src="slide.img" :alt="slide.name" :pending="true" />
           </div>
-          <div class="bg-white/70 p-4">
+          <div class="flex-1 bg-white/70 p-4">
             <p class="font-serif text-lg font-bold text-goose">{{ slide.name }}</p>
-            <p class="text-sm text-neutral-600">{{ slide.note }}</p>
+            <p class="mt-1 text-sm leading-relaxed text-neutral-600">{{ slide.note }}</p>
           </div>
         </div>
       </li>

@@ -112,7 +112,7 @@ const homeFaq = FAQ.slice(0, 3)
     <!-- Brand story teaser. -->
     <section class="bg-white/50 py-14">
       <div class="container-page grid items-center gap-8 md:grid-cols-2">
-        <div class="h-56 overflow-hidden rounded-2xl shadow-sm md:h-72">
+        <div class="mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl shadow-sm">
           <PlaceholderImage src="/images/chef.jpg" alt="郭芳銘主廚與金牌燒鵝" />
         </div>
         <div>

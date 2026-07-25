@@ -34,11 +34,11 @@ const actions = computed<Action[]>(() => {
 
 <template>
   <ul class="grid grid-cols-3 gap-3 sm:grid-cols-6">
-    <li v-for="a in actions" :key="a.label">
+    <li v-for="a in actions" :key="a.label" class="flex">
       <component
         :is="a.to ? resolveComponent('NuxtLink') : 'a'"
         v-bind="a.to ? { to: a.to } : { href: a.href, target: '_blank', rel: 'noopener' }"
-        class="tap-target flex-col gap-2 rounded-2xl bg-white/70 p-4 text-center text-sm font-medium text-neutral-700 shadow-sm transition hover:bg-gold/15 hover:text-goose"
+        class="flex aspect-square w-full flex-col items-center justify-center gap-2 rounded-2xl bg-white/70 p-3 text-center text-sm font-semibold text-neutral-700 shadow-sm transition hover:bg-gold/15 hover:text-goose"
       >
         <component :is="a.icon" class="h-7 w-7 text-goose" aria-hidden="true" />
         <span>{{ a.label }}</span>

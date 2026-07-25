@@ -7,12 +7,12 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-cream text-neutral-800 font-sans antialiased;
+    @apply bg-cream text-neutral-800 font-sans font-medium antialiased;
   }
   h1,
   h2,
   h3 {
-    @apply font-serif;
+    @apply font-serif font-black;
   }
 }
 
@@ -22,12 +22,15 @@
     @apply min-h-touch min-w-touch inline-flex items-center justify-center;
   }
 
+  /* Secondary action — brand red. */
   .btn-primary {
-    @apply tap-target rounded-full bg-goose px-6 py-3 font-semibold text-cream shadow-sm transition hover:bg-goose-deep focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2;
+    @apply tap-target rounded-full bg-goose px-6 py-3 font-bold text-cream shadow-sm transition hover:bg-goose-deep focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2;
   }
 
+  /* Primary conversion (LINE) — championship gold, ties to the 金牌 theme and
+     avoids clashing green-next-to-red. */
   .btn-line {
-    @apply tap-target gap-2 rounded-full bg-line px-6 py-3 font-semibold text-white shadow-sm transition hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2;
+    @apply tap-target gap-2 rounded-full bg-gold px-6 py-3 font-bold text-goose-deep shadow-sm transition hover:bg-[#c69f2c] focus:outline-none focus:ring-2 focus:ring-goose focus:ring-offset-2;
   }
 
   .container-page {
