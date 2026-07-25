@@ -17,48 +17,36 @@ const signatures = MENU.flatMap((c) => c.dishes)
   .filter((d) => d.signature)
   .map((d) => ({ name: d.name, note: d.description, img: d.img }))
 
-// Featured hero dish = first signature item.
-const featured = MENU.flatMap((c) => c.dishes).find((d) => d.signature)
-
 const homeFaq = FAQ.slice(0, 3)
 </script>
 
 <template>
   <div>
-    <!-- Hero (design-spec §1). Two-column: pitch + featured dish card. -->
-    <section class="hero-texture relative overflow-hidden text-cream">
-      <div class="container-page relative grid items-center gap-10 py-16 md:grid-cols-2 md:py-20">
-        <div>
+    <!-- Hero — full-bleed 2023 金牌燒鵝爭霸賽 award photo (design-spec §1). -->
+    <section class="relative overflow-hidden text-cream">
+      <img
+        src="/images/hero-bg.jpg"
+        alt="鵝邸家 2023 金牌燒鵝爭霸賽 金牌獎"
+        fetchpriority="high"
+        class="absolute inset-0 h-full w-full object-cover object-center"
+      />
+      <!-- Overlays for text legibility over the photo. -->
+      <div class="absolute inset-0 bg-gradient-to-r from-goose-deep/95 via-goose-deep/80 to-goose-deep/45" />
+      <div class="absolute inset-0 bg-gradient-to-t from-goose-deep/75 to-transparent" />
+
+      <div class="container-page relative py-24 md:py-32">
+        <div class="max-w-xl">
           <GoldBadge class="mb-5" />
-          <h1 class="font-serif text-4xl font-bold leading-tight sm:text-5xl">
+          <h1 class="font-serif text-4xl font-bold leading-tight [text-shadow:0_2px_10px_rgba(0,0,0,0.35)] sm:text-5xl">
             {{ SITE.name }}<span class="text-gold">金牌燒鵝</span>
           </h1>
-          <p class="mt-4 max-w-xl text-lg text-cream/85">
+          <p class="mt-4 text-lg text-cream/90 [text-shadow:0_1px_6px_rgba(0,0,0,0.4)]">
             {{ SITE.chef }} 主廚 {{ SITE.yearsOfCraft }} 年匠心，皮脆肉嫩、油亮多汁。<br />
             僅提供來店享用與外帶自取，只為那一口剛出爐的酥脆。
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
             <LineButton />
             <NuxtLink to="/menu" class="btn-primary">查看菜單</NuxtLink>
-          </div>
-        </div>
-
-        <!-- Featured dish card. -->
-        <div v-if="featured" class="mx-auto w-full max-w-sm overflow-hidden rounded-3xl bg-white shadow-2xl">
-          <div class="h-52">
-            <PlaceholderImage variant="dish" :src="featured.img" :alt="featured.name" :pending="false" />
-          </div>
-          <div class="p-6 text-neutral-800">
-            <p class="text-xs font-semibold uppercase tracking-wide text-gold">招牌推薦</p>
-            <h2 class="mt-1 font-serif text-2xl font-bold text-goose">{{ featured.name }}</h2>
-            <p class="mt-2 text-sm leading-relaxed text-neutral-600">{{ featured.description }}</p>
-            <div class="mt-4 flex items-center justify-between">
-              <span class="font-serif text-2xl font-bold text-goose">
-                NT$ {{ featured.price
-                }}<span v-if="featured.unit" class="ml-1 text-sm font-normal text-neutral-500">/ {{ featured.unit }}</span>
-              </span>
-              <LineButton label="LINE 預訂" />
-            </div>
           </div>
         </div>
       </div>
