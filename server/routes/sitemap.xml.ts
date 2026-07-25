@@ -2,7 +2,7 @@ import { SITE } from '../../app/data/site'
 
 // Generated sitemap. Reflects SITE.url — update the canonical domain in
 // app/data/site.ts and this stays correct.
-const ROUTES = ['', '/about', '/menu', '/portfolio', '/location']
+const ROUTES = ['', '/about', '/menu', '/portfolio', '/press', '/location']
 
 export default defineEventHandler((event) => {
   const base = SITE.url.replace(/\/$/, '')

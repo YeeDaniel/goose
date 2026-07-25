@@ -5,6 +5,7 @@ const nav = [
   { label: '關於鵝邸家', to: '/about' },
   { label: '美味菜單', to: '/menu' },
   { label: '金牌饗宴回顧', to: '/portfolio' },
+  { label: '媒體報導', to: '/press' },
   { label: '服務據點', to: '/location' },
 ]
 </script>

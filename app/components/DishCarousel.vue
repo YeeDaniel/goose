@@ -4,6 +4,7 @@
 interface Slide {
   name: string
   note: string
+  img?: string
 }
 defineProps<{ slides: Slide[] }>()
 </script>
@@ -18,7 +19,7 @@ defineProps<{ slides: Slide[] }>()
       >
         <div class="overflow-hidden rounded-2xl shadow-sm">
           <div class="h-40">
-            <PlaceholderImage variant="dish" :pending="true" />
+            <PlaceholderImage variant="dish" :src="slide.img" :alt="slide.name" :pending="true" />
           </div>
           <div class="bg-white/70 p-4">
             <p class="font-serif text-lg font-bold text-goose">{{ slide.name }}</p>

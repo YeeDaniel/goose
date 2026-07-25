@@ -10,8 +10,7 @@ import { SITE } from '~/data/site'
   <section class="overflow-hidden rounded-3xl bg-goose-deep text-cream shadow-lg">
     <div class="grid md:grid-cols-2">
       <div class="min-h-56">
-        <!-- Placeholder for /images/award.jpg -->
-        <PlaceholderImage variant="medal" label="金牌獎盃照片" :pending="true" />
+        <PlaceholderImage src="/images/award.jpg" :alt="`${SITE.awardCompetition} 金牌領獎`" variant="medal" />
       </div>
 
       <div class="flex flex-col justify-center gap-3 p-8">

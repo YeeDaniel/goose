@@ -9,12 +9,12 @@ useSeoMeta({
 // Display-only gallery (design-spec §1): NO booking / enquiry button here.
 // TODO: replace placeholders with real banquet / year-end-party photography.
 const highlights = [
-  { title: '大型尾牙宴', note: '百人席次，金牌燒鵝整隻現斬，宴席規模一次到位。' },
-  { title: '企業春酒', note: '主廚特製宴席菜色，港式燒味撐場，賓主盡歡。' },
-  { title: '社區辦桌', note: '傳統辦桌氣氛，一桌接一桌，口碑就是這樣相傳。' },
-  { title: '節慶宴席', note: '年節限定檔期，一鵝難求，老顧客提前預訂。' },
-  { title: '喜慶宴會', note: '重要時刻的餐桌主角，為場合加分。' },
-  { title: '媒體採訪紀實', note: '三連霸金牌實力，受到在地媒體關注報導。' },
+  { title: '大型宴席', note: '整桌金牌燒鵝現斬上桌，宴席規模一次到位。', img: '/images/event-1.jpg' },
+  { title: '澎湃辦桌', note: '主廚特製宴席菜色，港式燒味撐場，賓主盡歡。', img: '/images/event-2.jpg' },
+  { title: '廟埕人潮', note: '大甲在地活動，一攤接一攤，口碑就是這樣相傳。', img: '/images/event-3.jpg' },
+  { title: '節慶宴席', note: '年節限定檔期，一鵝難求，老顧客提前預訂。', img: '/images/event-4.jpg' },
+  { title: '席上主角', note: '金牌燒鵝切盤，重要時刻的餐桌主角。', img: '/images/event-5.jpg' },
+  { title: '金牌爭霸舞台', note: '三連霸金牌實力，站上燒鵝爭霸賽舞台。', img: '/images/event-6.jpg' },
 ]
 </script>
 
@@ -35,7 +35,7 @@ const highlights = [
     <ul class="grid gap-6 md:grid-cols-2">
       <li v-for="item in highlights" :key="item.title" class="overflow-hidden rounded-2xl bg-white/60 shadow-sm">
         <div class="h-56">
-          <PlaceholderImage variant="goose" :label="item.title" :pending="true" />
+          <PlaceholderImage variant="goose" :src="item.img" :alt="item.title" :pending="true" />
         </div>
         <div class="p-5">
           <h3 class="font-serif text-lg font-bold text-goose">{{ item.title }}</h3>
@@ -43,6 +43,12 @@ const highlights = [
         </div>
       </li>
     </ul>
+
+    <p class="mt-8 text-center">
+      <NuxtLink to="/press" class="font-semibold text-goose hover:underline">
+        看電視專訪與新聞報導 →
+      </NuxtLink>
+    </p>
 
     <!-- Reviews add life to a display-only page. -->
     <div class="mt-16">

@@ -15,7 +15,7 @@ useFaqJsonLd(FAQ)
 // Carousel = signature dishes flagged across the menu.
 const signatures = MENU.flatMap((c) => c.dishes)
   .filter((d) => d.signature)
-  .map((d) => ({ name: d.name, note: d.description }))
+  .map((d) => ({ name: d.name, note: d.description, img: d.img }))
 
 // Featured hero dish = first signature item.
 const featured = MENU.flatMap((c) => c.dishes).find((d) => d.signature)
@@ -46,7 +46,7 @@ const homeFaq = FAQ.slice(0, 3)
         <!-- Featured dish card. -->
         <div v-if="featured" class="mx-auto w-full max-w-sm overflow-hidden rounded-3xl bg-white shadow-2xl">
           <div class="h-52">
-            <PlaceholderImage variant="dish" label="招牌實拍準備中" :pending="false" />
+            <PlaceholderImage variant="dish" :src="featured.img" :alt="featured.name" :pending="false" />
           </div>
           <div class="p-6 text-neutral-800">
             <p class="text-xs font-semibold uppercase tracking-wide text-gold">招牌推薦</p>
@@ -124,8 +124,8 @@ const homeFaq = FAQ.slice(0, 3)
     <!-- Brand story teaser. -->
     <section class="bg-white/50 py-14">
       <div class="container-page grid items-center gap-8 md:grid-cols-2">
-        <div class="h-56 overflow-hidden rounded-2xl shadow-sm">
-          <PlaceholderImage variant="goose" label="主廚與店面照片" />
+        <div class="h-56 overflow-hidden rounded-2xl shadow-sm md:h-72">
+          <PlaceholderImage src="/images/chef.jpg" alt="郭芳銘主廚與金牌燒鵝" />
         </div>
         <div>
           <h2 class="font-serif text-2xl font-bold text-goose">關於鵝邸家</h2>

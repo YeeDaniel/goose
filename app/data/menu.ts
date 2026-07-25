@@ -10,6 +10,8 @@ export interface Dish {
   /** Unit the price applies to, e.g. '半隻' / '一斤' / '3隻' / '盒' / '包'. */
   unit?: string
   signature?: boolean
+  /** Photo path under public/. Signature dishes are shown on Home. */
+  img?: string
 }
 
 export interface MenuCategory {
@@ -29,6 +31,7 @@ export const MENU: MenuCategory[] = [
         price: 850,
         unit: '半隻',
         signature: true,
+        img: '/images/goose-hero.jpg',
       },
       {
         name: '金牌燒鵝（整隻）',
@@ -36,6 +39,7 @@ export const MENU: MenuCategory[] = [
         price: 1600,
         unit: '整隻',
         signature: true,
+        img: '/images/goose-whole.jpg',
       },
     ],
   },

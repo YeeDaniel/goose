@@ -1,22 +1,34 @@
 <script setup lang="ts">
-// Branded image placeholder — used until real photography lands, so empty
-// slots read as intentional ("照片準備中") rather than broken.
-// TODO: replace usages with <img>/<NuxtImg> once photos are available.
+// Image slot. When `src` is set it renders the real photo (object-cover);
+// otherwise a branded placeholder (鵝/medal watermark + 照片準備中) so empty
+// slots read as intentional rather than broken.
 withDefaults(
   defineProps<{
-    /** Watermark motif. */
+    /** Real photo path (public/). When set, the placeholder is not shown. */
+    src?: string
+    alt?: string
+    /** Watermark motif (placeholder only). */
     variant?: 'goose' | 'medal' | 'dish'
-    /** Small caption chip; omit to hide. */
+    /** Small caption chip (placeholder only). */
     label?: string
-    /** Show the "照片準備中" tag. */
+    /** Show the "照片準備中" tag (placeholder only). */
     pending?: boolean
   }>(),
-  { variant: 'goose', label: '', pending: true },
+  { src: '', alt: '', variant: 'goose', label: '', pending: true },
 )
 </script>
 
 <template>
+  <img
+    v-if="src"
+    :src="src"
+    :alt="alt"
+    loading="lazy"
+    class="h-full w-full object-cover"
+  />
+
   <div
+    v-else
     class="relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-br from-cream via-gold/15 to-goose/15"
   >
     <!-- Watermark motif -->
@@ -31,14 +43,12 @@ withDefaults(
     </svg>
     <span v-else class="select-none font-serif text-7xl font-black text-goose/15" aria-hidden="true">鵝</span>
 
-    <!-- Optional caption -->
     <span
       v-if="label"
       class="absolute bottom-3 left-3 rounded-full bg-white/70 px-2.5 py-0.5 text-xs font-medium text-neutral-600"
     >
       {{ label }}
     </span>
-    <!-- Pending tag -->
     <span
       v-if="pending"
       class="absolute right-3 top-3 rounded-full bg-black/25 px-2 py-0.5 text-[10px] text-white/90"
