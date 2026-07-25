@@ -55,8 +55,11 @@ export const SITE = {
 
   // LINE Official Account — single global conversion target (O2O).
   lineUrl: 'https://lin.ee/vsPOQej',
-  // Facebook — TODO: replace this search link with the real page URL (facebook.com/<page>).
-  facebookUrl: 'https://www.facebook.com/search/top?q=%E9%B5%9D%E9%82%B8%E5%AE%B6%E7%87%92%E9%B5%9D%E5%B0%88%E8%B3%A3',
+  // Facebook 粉絲專頁.
+  facebookUrl: 'https://www.facebook.com/goosehometa',
+  // Google 商家評論.
+  googleReviewsUrl:
+    'https://www.google.com/maps/place/%E9%B5%9D%E9%82%B8%E5%AE%B6%E7%87%92%E9%B5%9D%E5%B0%88%E8%B3%A3/@24.347744,120.626421,17z/data=!4m8!3m7!1s0x34690e0222afe923:0x3d5fbf439c55d424!9m1!1b1',
 
   // Canonical site URL — TODO.
   url: 'https://www.example.com',
