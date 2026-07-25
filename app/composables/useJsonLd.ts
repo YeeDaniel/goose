@@ -33,6 +33,8 @@ export function useRestaurantJsonLd() {
       alternateName: SITE.nameEn,
       description: SITE.description,
       servesCuisine: '港式燒味、燒鵝、叉燒、滷味',
+      // Takeout pickup only — no dine-in, no reservations.
+      acceptsReservations: false,
       url: SITE.url,
       telephone: SITE.phoneE164,
       address: {

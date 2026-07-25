@@ -42,7 +42,7 @@ const homeFaq = FAQ.slice(0, 3)
           </h1>
           <p class="mt-4 text-lg text-cream/90 [text-shadow:0_1px_6px_rgba(0,0,0,0.4)]">
             {{ SITE.chef }} 主廚 {{ SITE.yearsOfCraft }} 年匠心，皮脆肉嫩、油亮多汁。<br />
-            僅提供來店享用與外帶自取，只為那一口剛出爐的酥脆。
+            僅提供外帶自取，只為那一口剛出爐的酥脆。
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
             <LineButton variant="light" />

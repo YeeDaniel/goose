@@ -1,6 +1,6 @@
 // Conversational FAQ — Source of truth: docs/dev-spec.md §3.2, docs/design-spec.md §1.
 // Written in natural language so AI search engines (ChatGPT, Gemini) can quote answers.
-// The no-delivery QA is REQUIRED and must stress 僅提供來店享用與自取.
+// The no-delivery QA is REQUIRED and must stress 僅提供外帶自取 (no dine-in, no delivery).
 
 export interface FaqItem {
   question: string
@@ -16,12 +16,12 @@ export const FAQ: FaqItem[] = [
   {
     question: '有提供宅配服務嗎？',
     answer:
-      '為了堅持燒鵝剛出爐的最佳脆度與多汁口感，我們僅提供來店享用與外帶自取，恕不提供宅配。這是郭芳銘主廚十年來對品質的職人堅持。',
+      '為了堅持燒鵝剛出爐的最佳脆度與多汁口感，我們僅提供外帶自取，恕不提供內用與宅配。這是郭芳銘主廚十年來對品質的職人堅持。',
   },
   {
-    question: '如何預約訂位或點餐？',
+    question: '如何預訂外帶點餐？',
     answer:
-      '請點擊網站右下角的「LINE 預約／點餐」按鈕，直接於 LINE 官方帳號完成訂位與外帶預訂，快速又方便。',
+      '請點擊網站右下角的「LINE 預約／點餐」按鈕，直接於 LINE 官方帳號完成外帶預訂與取餐時間安排，快速又方便。',
   },
   {
     question: '鵝邸家的招牌是什麼？',

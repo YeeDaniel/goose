@@ -6,7 +6,7 @@ Guidance for AI agents and developers working in this repository.
 
 **鵝邸家 (Goose Family)** is an award-winning roast-goose restaurant. This repo is its official
 marketing website — a mobile-first, conversion-focused site whose single job is to funnel visitors
-to the restaurant's LINE Official Account for dine-in reservations and takeout pickup. The three
+to the restaurant's LINE Official Account for takeout pickup orders. The three
 core goals are: **brand rejuvenation (品牌年輕化)**, **deepening the in-person experience
 (深化實體體驗)**, and **simplifying LINE O2O conversion (LINE O2O 單純化轉換)**.
 
@@ -67,15 +67,16 @@ Source of truth: [docs/dev-spec.md](docs/dev-spec.md). Optimized for AI search (
   AI answers can read dish details precisely.
 - **Semantic, conversational FAQ:** e.g. 「鵝邸家可以外帶嗎？」 and 「有提供宅配服務嗎？」 — answered in
   natural language to stress that, to protect the freshly-out-of-the-oven crispness and juiciness,
-  **only dine-in and takeout pickup are offered (僅提供來店享用與自取)**.
+  **only takeout pickup is offered — no dine-in, no delivery (僅提供外帶自取，恕不提供內用與宅配)**.
 - **Entity linking:** tie code and copy to 郭芳銘主廚 / 十年經驗 / 連續三年金牌得主.
 
 ## Conventions & guardrails
 
 - **Mobile-first** in every layout decision.
 - **Keep the funnel minimal** — all roads lead to the LINE CTA.
-- **No online-ordering or delivery flow.** Dine-in (來店) and pickup (自取) only; do not add cart,
-  checkout, delivery, or public booking buttons (Brand Portfolio stays display-only).
+- **No online-ordering or delivery flow.** Takeout pickup (外帶自取) only — no dine-in (無內用),
+  no delivery; do not add cart, checkout, delivery, dine-in seating/booking, or public booking
+  buttons (Brand Portfolio stays display-only).
 - **Preserve brand Chinese copy verbatim** — page names, dish names, and slogans stay in Traditional Chinese.
 - **TypeScript strict**; SSR-friendly, semantic HTML.
 
