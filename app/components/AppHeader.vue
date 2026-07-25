@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
+import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { SITE } from '~/data/site'
 
 const nav = [
@@ -11,13 +13,18 @@ const nav = [
 </script>
 
 <template>
-  <header class="sticky top-0 z-30 border-b border-black/5 bg-cream/90 backdrop-blur">
+  <Disclosure
+    as="header"
+    v-slot="{ open, close }"
+    class="sticky top-0 z-30 border-b border-black/5 bg-cream/90 backdrop-blur"
+  >
     <div class="container-page flex h-16 items-center justify-between">
       <NuxtLink to="/" class="flex items-baseline gap-2" :aria-label="`${SITE.name} 首頁`">
         <span class="font-serif text-2xl font-bold text-goose">{{ SITE.name }}</span>
         <span class="hidden text-xs text-gold sm:inline">{{ SITE.tagline }}</span>
       </NuxtLink>
 
+      <!-- Desktop nav (md+). -->
       <nav class="hidden items-center gap-6 md:flex" aria-label="主要導覽">
         <NuxtLink
           v-for="item in nav"
@@ -30,6 +37,34 @@ const nav = [
         </NuxtLink>
         <LineButton />
       </nav>
+
+      <!-- Mobile hamburger (<md). -->
+      <DisclosureButton
+        class="tap-target -mr-2 rounded-lg text-goose md:hidden"
+        :aria-label="open ? '關閉選單' : '開啟選單'"
+      >
+        <XMarkIcon v-if="open" class="h-6 w-6" aria-hidden="true" />
+        <Bars3Icon v-else class="h-6 w-6" aria-hidden="true" />
+      </DisclosureButton>
     </div>
-  </header>
+
+    <!-- Mobile dropdown panel. -->
+    <DisclosurePanel class="border-t border-black/5 bg-cream/95 backdrop-blur md:hidden">
+      <nav class="container-page flex flex-col py-2" aria-label="主要導覽">
+        <NuxtLink
+          v-for="item in nav"
+          :key="item.to"
+          :to="item.to"
+          class="tap-target justify-start border-b border-black/5 py-3 text-base font-medium text-neutral-700 transition hover:text-goose"
+          active-class="text-goose"
+          @click="close()"
+        >
+          {{ item.label }}
+        </NuxtLink>
+        <div class="py-4">
+          <LineButton block @click="close()" />
+        </div>
+      </nav>
+    </DisclosurePanel>
+  </Disclosure>
 </template>

@@ -1,10 +1,19 @@
 <script setup lang="ts">
 import { SITE } from '~/data/site'
+
+// Footer sitemap — persistent internal nav + crawl path (mirrors the header nav).
+const nav = [
+  { label: '關於鵝邸家', to: '/about' },
+  { label: '美味菜單', to: '/menu' },
+  { label: '金牌饗宴回顧', to: '/portfolio' },
+  { label: '媒體報導', to: '/press' },
+  { label: '服務據點與常見問題', to: '/location' },
+]
 </script>
 
 <template>
   <footer class="border-t border-black/5 bg-goose text-cream/90">
-    <div class="container-page grid gap-6 py-10 sm:grid-cols-3">
+    <div class="container-page grid gap-6 py-10 sm:grid-cols-2 lg:grid-cols-4">
       <div>
         <p class="font-serif text-xl font-bold text-gold">{{ SITE.name }}</p>
         <p class="mt-1 text-sm">{{ SITE.tagline }}</p>
@@ -12,6 +21,17 @@ import { SITE } from '~/data/site'
           {{ SITE.chef }} 主廚 · {{ SITE.yearsOfCraft }} 年匠心
         </p>
       </div>
+
+      <nav class="text-sm" aria-label="網站導覽">
+        <p class="font-semibold text-gold">網站導覽</p>
+        <ul class="mt-2 space-y-1.5">
+          <li v-for="item in nav" :key="item.to">
+            <NuxtLink :to="item.to" class="text-cream/80 transition hover:text-gold">
+              {{ item.label }}
+            </NuxtLink>
+          </li>
+        </ul>
+      </nav>
 
       <div class="text-sm">
         <p class="font-semibold text-gold">營業時間</p>
