@@ -15,6 +15,10 @@ useMenuJsonLd()
   <div class="container-page py-14">
     <SectionHeading title="美味菜單" subtitle="金牌燒鵝 · 叉燒 · 滷水類" />
 
+    <div class="mb-12 h-48 overflow-hidden rounded-3xl shadow-sm sm:h-64">
+      <PlaceholderImage src="/images/goose-half.jpg" alt="金牌燒鵝切盤" />
+    </div>
+
     <div class="space-y-12">
       <section v-for="cat in MENU" :key="cat.id" :id="cat.id" class="scroll-mt-20">
         <h2 class="mb-4 flex items-center gap-3 font-serif text-2xl font-bold text-goose">
@@ -25,19 +29,24 @@ useMenuJsonLd()
           <li
             v-for="dish in cat.dishes"
             :key="dish.name"
-            class="rounded-2xl bg-white/60 p-5 shadow-sm"
+            class="flex gap-4 rounded-2xl bg-white/60 p-5 shadow-sm"
           >
-            <div class="flex items-baseline justify-between gap-3">
-              <h3 class="font-semibold text-neutral-800">
-                {{ dish.name }}
-                <span v-if="dish.signature" class="ml-1 align-middle text-xs text-gold">★ 招牌</span>
-              </h3>
-              <span v-if="dish.price != null" class="whitespace-nowrap font-semibold text-goose">
-                NT$ {{ dish.price }}<span v-if="dish.unit" class="ml-1 text-xs font-normal text-neutral-500">/ {{ dish.unit }}</span>
-              </span>
-              <span v-else class="whitespace-nowrap text-sm text-neutral-500">時價</span>
+            <div v-if="dish.img" class="h-20 w-20 shrink-0 overflow-hidden rounded-xl">
+              <PlaceholderImage :src="dish.img" :alt="dish.name" />
             </div>
-            <p class="mt-1 text-sm leading-relaxed text-neutral-600">{{ dish.description }}</p>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-semibold text-neutral-800">
+                  {{ dish.name }}
+                  <span v-if="dish.signature" class="ml-1 align-middle text-xs text-gold">★ 招牌</span>
+                </h3>
+                <span v-if="dish.price != null" class="whitespace-nowrap font-semibold text-goose">
+                  NT$ {{ dish.price }}<span v-if="dish.unit" class="ml-1 text-xs font-normal text-neutral-500">/ {{ dish.unit }}</span>
+                </span>
+                <span v-else class="whitespace-nowrap text-sm text-neutral-500">時價</span>
+              </div>
+              <p class="mt-1 text-sm leading-relaxed text-neutral-600">{{ dish.description }}</p>
+            </div>
           </li>
         </ul>
       </section>

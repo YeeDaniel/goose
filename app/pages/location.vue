@@ -57,6 +57,16 @@ useFaqJsonLd(FAQ)
       </div>
     </section>
 
+    <!-- Local flavour: 大甲鎮瀾宮 商圈 -->
+    <figure class="mt-10 overflow-hidden rounded-2xl shadow-sm">
+      <div class="h-56 sm:h-72">
+        <PlaceholderImage src="/images/landmark.jpg" alt="大甲鎮瀾宮 國際點心站" />
+      </div>
+      <figcaption class="bg-white/60 px-5 py-3 text-sm text-neutral-600">
+        座落大甲，鵝香飄過鎮瀾宮商圈 — 假日清晨現烤，售完為止。
+      </figcaption>
+    </figure>
+
     <!-- FAQ -->
     <section class="mt-16">
       <SectionHeading title="常見問題" />

@@ -28,7 +28,25 @@ const milestones = [
       </p>
     </header>
 
-    <ol class="mx-auto mt-12 max-w-2xl space-y-6 border-l-2 border-gold/50 pl-6">
+    <!-- Chef intro. -->
+    <div class="mx-auto mt-12 grid max-w-4xl items-center gap-8 md:grid-cols-2">
+      <div class="aspect-[4/5] overflow-hidden rounded-2xl shadow-sm">
+        <PlaceholderImage src="/images/chef.jpg" :alt="`${SITE.chef} 主廚`" />
+      </div>
+      <div>
+        <h2 class="font-serif text-2xl font-bold text-goose">主廚 · {{ SITE.chef }}</h2>
+        <p class="mt-3 leading-relaxed text-neutral-700">
+          十年專注一味，從選鵝、風乾到炙烤，堅持港式燒味的火候之道。
+          每一隻金牌燒鵝，都是對「剛出爐那一口酥脆」的執著。
+        </p>
+        <p class="mt-3 leading-relaxed text-neutral-700">
+          2023-2025 連續三年金牌，是實力，也是每個假日清晨備料的累積。
+        </p>
+      </div>
+    </div>
+
+    <h2 class="mx-auto mt-16 max-w-2xl font-serif text-2xl font-bold text-goose">品牌歷程</h2>
+    <ol class="mx-auto mt-6 max-w-2xl space-y-6 border-l-2 border-gold/50 pl-6">
       <li v-for="m in milestones" :key="m.year" class="relative">
         <span class="absolute -left-[31px] top-1 h-4 w-4 rounded-full border-2 border-gold bg-cream" />
         <p class="font-serif text-lg font-bold text-goose">{{ m.year }}</p>
@@ -36,7 +54,20 @@ const milestones = [
       </li>
     </ol>
 
-    <div class="mx-auto mt-12 max-w-4xl">
+    <!-- 職人現場 -->
+    <div class="mx-auto mt-16 max-w-4xl">
+      <h2 class="mb-6 font-serif text-2xl font-bold text-goose">職人現場</h2>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="aspect-video overflow-hidden rounded-2xl shadow-sm">
+          <PlaceholderImage src="/images/chef-action.jpg" alt="主廚現場處理燒鵝" />
+        </div>
+        <div class="aspect-video overflow-hidden rounded-2xl shadow-sm">
+          <PlaceholderImage src="/images/oven.jpg" alt="炭爐現烤燒鵝" />
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto mt-16 max-w-4xl">
       <AwardBanner />
     </div>
 
