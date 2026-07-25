@@ -7,6 +7,8 @@ withDefaults(
     /** Real photo path (public/). When set, the placeholder is not shown. */
     src?: string
     alt?: string
+    /** How the photo fills the slot. 'contain' shows the whole photo (no crop). */
+    fit?: 'cover' | 'contain'
     /** Watermark motif (placeholder only). */
     variant?: 'goose' | 'medal' | 'dish'
     /** Small caption chip (placeholder only). */
@@ -14,7 +16,7 @@ withDefaults(
     /** Show the "照片準備中" tag (placeholder only). */
     pending?: boolean
   }>(),
-  { src: '', alt: '', variant: 'goose', label: '', pending: true },
+  { src: '', alt: '', fit: 'cover', variant: 'goose', label: '', pending: true },
 )
 </script>
 
@@ -24,7 +26,8 @@ withDefaults(
     :src="src"
     :alt="alt"
     loading="lazy"
-    class="h-full w-full object-cover"
+    class="h-full w-full"
+    :class="fit === 'contain' ? 'object-contain' : 'object-cover'"
   />
 
   <div
