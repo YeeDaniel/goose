@@ -15,8 +15,8 @@ export interface PressArticle {
 
 export const PRESS_VIDEOS: PressVideo[] = [
   { label: '2025', title: '2025 金牌燒鵝爭霸賽 專訪', youtubeId: '95S0JgrqrqI' },
-  { label: '2024', title: '2024 金牌燒鵝爭霸賽 專訪', youtubeId: 'gkfq2t2hMe8' },
-  { label: '2023', title: '2023 金牌燒鵝爭霸賽 專訪', youtubeId: 'yJQ2SG_k8lo' },
+  { label: '2024', title: '2024 金牌燒鵝爭霸賽 專訪', youtubeId: 'n6YGi_JCHNU' },
+  { label: '2023', title: '2023 金牌燒鵝爭霸賽 專訪', youtubeId: 'fMwhfqWSMH8' },
   { label: '鎮瀾宮', title: '大甲鎮瀾宮 國際點心站', youtubeId: 'b3fiJoEb9hg' },
 ]
 

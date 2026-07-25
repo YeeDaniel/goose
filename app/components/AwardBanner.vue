@@ -20,9 +20,12 @@ import { SITE } from '~/data/site'
           {{ SITE.chef }} 主廚率隊出征「{{ SITE.awardCompetition }}」，
           {{ SITE.award }}。一隻燒鵝，燒出十年匠心與三連霸的實力。
         </p>
-        <div>
-          <LineButton label="LINE 預訂金牌燒鵝" variant="light" />
-        </div>
+        <NuxtLink
+          to="/about"
+          class="inline-block font-semibold text-gold underline-offset-4 hover:underline"
+        >
+          看三連霸金牌故事 →
+        </NuxtLink>
       </div>
     </div>
   </section>

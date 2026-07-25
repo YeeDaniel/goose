@@ -2,7 +2,8 @@
 import { SITE } from '~/data/site'
 
 // Floating global CTA — the site's only explicit conversion goal (design-spec §3).
-// Sits above the bottom nav on mobile.
+// Desktop/tablet only (md+); on mobile the fixed BottomNav already carries the
+// LINE CTA, so we hide this to avoid two LINE buttons stacked at the bottom.
 </script>
 
 <template>
@@ -10,7 +11,7 @@ import { SITE } from '~/data/site'
     :href="SITE.lineUrl"
     target="_blank"
     rel="noopener"
-    class="btn-primary fixed right-4 bottom-24 z-40 shadow-lg md:bottom-6"
+    class="btn-primary fixed right-4 bottom-6 z-40 hidden shadow-lg md:inline-flex"
     aria-label="開啟 LINE 官方帳號預約或點餐"
   >
     <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
