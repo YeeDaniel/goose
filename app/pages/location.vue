@@ -58,12 +58,16 @@ useFaqJsonLd(FAQ)
     </section>
 
     <!-- Local flavour: 大甲鎮瀾宮 商圈 -->
-    <figure class="mx-auto mt-10 max-w-sm overflow-hidden rounded-2xl shadow-sm">
-      <div class="aspect-[3/4]">
-        <PlaceholderImage src="/images/landmark.jpg" alt="大甲鎮瀾宮 國際點心站" />
+    <figure class="mt-10 grid items-center gap-6 rounded-2xl bg-white/60 p-5 shadow-sm sm:grid-cols-2">
+      <div class="mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden rounded-xl">
+        <PlaceholderImage src="/images/landmark.jpg" alt="大甲鎮瀾宮商圈 鵝邸家現烤燒鵝" />
       </div>
-      <figcaption class="bg-white/60 px-5 py-3 text-sm text-neutral-600">
-        座落大甲，鵝香飄過鎮瀾宮商圈 — 假日清晨現烤，售完為止。
+      <figcaption>
+        <h3 class="font-serif text-lg font-bold text-goose">就在大甲鎮瀾宮商圈</h3>
+        <p class="mt-2 text-sm leading-relaxed text-neutral-600">
+          鵝邸家座落大甲，鵝香飄過鎮瀾宮商圈。假日清晨現烤、現斬，皮脆油亮，售完為止。
+          建議先透過 LINE 預訂，到店取餐免久候。
+        </p>
       </figcaption>
     </figure>
 
