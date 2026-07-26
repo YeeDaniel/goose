@@ -44,9 +44,9 @@ useSeoMeta({
       <h2 class="mb-5 flex items-center gap-2 font-serif text-2xl font-bold text-goose">
         採訪花絮・貴賓推薦<span class="h-px flex-1 bg-gold/40" />
       </h2>
-      <ul class="grid grid-cols-2 gap-4 md:grid-cols-3">
+      <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         <li v-for="p in PRESS_GALLERY" :key="p.img" class="overflow-hidden rounded-2xl bg-white/60 shadow-sm">
-          <div class="aspect-[4/3]">
+          <div class="aspect-[3/4]">
             <PlaceholderImage :src="p.img" :alt="p.caption" />
           </div>
           <p class="px-4 py-3 text-sm text-neutral-600">{{ p.caption }}</p>

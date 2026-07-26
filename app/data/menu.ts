@@ -53,6 +53,7 @@ export const MENU: MenuCategory[] = [
         price: 450,
         unit: '一斤',
         signature: true,
+        img: '/images/char-siu.jpg',
       },
     ],
   },

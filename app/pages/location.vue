@@ -58,8 +58,8 @@ useFaqJsonLd(FAQ)
     </section>
 
     <!-- Local flavour: 大甲鎮瀾宮 商圈 -->
-    <figure class="mt-10 overflow-hidden rounded-2xl shadow-sm">
-      <div class="h-56 sm:h-72">
+    <figure class="mx-auto mt-10 max-w-sm overflow-hidden rounded-2xl shadow-sm">
+      <div class="aspect-[3/4]">
         <PlaceholderImage src="/images/landmark.jpg" alt="大甲鎮瀾宮 國際點心站" />
       </div>
       <figcaption class="bg-white/60 px-5 py-3 text-sm text-neutral-600">

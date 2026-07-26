@@ -27,6 +27,5 @@ node_modules
 .playwright-mcp
 /*.png
 
-# Raw source photos (optimized copies live in public/images)
+# Raw source photos (categorized subfolders; optimized copies live in public/images)
 goose_photo/
-goose_photo_new/
