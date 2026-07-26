@@ -53,7 +53,7 @@ export const MENU: MenuCategory[] = [
         price: 450,
         unit: '一斤',
         signature: true,
-        img: '/images/char-siu.jpg',
+        // TODO: add a portrait 蜜汁叉燒 photo when available.
       },
     ],
   },

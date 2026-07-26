@@ -18,10 +18,7 @@ defineProps<{ slides: Slide[] }>()
         class="flex shrink-0 basis-72 snap-start sm:basis-80"
       >
         <div class="flex w-full flex-col overflow-hidden rounded-2xl shadow-sm">
-          <!-- Fixed height (not aspect-ratio): inside a flex-col the image's natural
-               height overrides aspect-ratio, so a landscape photo would render shorter
-               than a portrait one and leave the card looking uneven. -->
-          <div class="h-48 shrink-0 sm:h-56">
+          <div class="aspect-[4/3]">
             <PlaceholderImage variant="dish" :src="slide.img" :alt="slide.name" :pending="true" />
           </div>
           <div class="flex-1 bg-white/70 p-4">
