@@ -29,3 +29,4 @@ node_modules
 
 # Raw source photos (optimized copies live in public/images)
 goose_photo/
+goose_photo_new/

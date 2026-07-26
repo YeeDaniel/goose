@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { SITE } from '~/data/site'
-import { PRESS_VIDEOS, PRESS_ARTICLES } from '~/data/press'
+import { PRESS_VIDEOS, PRESS_ARTICLES, PRESS_GALLERY } from '~/data/press'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/outline'
 
 useSeoMeta({
@@ -35,6 +35,21 @@ useSeoMeta({
             <span class="rounded-full bg-goose px-2.5 py-0.5 text-xs font-semibold text-cream">{{ v.label }}</span>
             <p class="font-medium text-neutral-800">{{ v.title }}</p>
           </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Media & guest photo gallery -->
+    <section class="mt-16">
+      <h2 class="mb-5 flex items-center gap-2 font-serif text-2xl font-bold text-goose">
+        採訪花絮・貴賓推薦<span class="h-px flex-1 bg-gold/40" />
+      </h2>
+      <ul class="grid grid-cols-2 gap-4 md:grid-cols-3">
+        <li v-for="p in PRESS_GALLERY" :key="p.img" class="overflow-hidden rounded-2xl bg-white/60 shadow-sm">
+          <div class="aspect-[4/3]">
+            <PlaceholderImage :src="p.img" :alt="p.caption" />
+          </div>
+          <p class="px-4 py-3 text-sm text-neutral-600">{{ p.caption }}</p>
         </li>
       </ul>
     </section>

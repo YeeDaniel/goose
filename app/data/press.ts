@@ -13,6 +13,21 @@ export interface PressArticle {
   date?: string
 }
 
+export interface PressPhoto {
+  img: string
+  caption: string
+}
+
+// 採訪花絮與貴賓合影 — owner-provided promotional photos.
+export const PRESS_GALLERY: PressPhoto[] = [
+  { img: '/images/press-1.jpg', caption: '電視媒體到店採訪拍攝' },
+  { img: '/images/press-3.jpg', caption: '郭芳銘主廚與現烤金牌燒鵝' },
+  { img: '/images/press-2.jpg', caption: '招牌前團隊合影' },
+  { img: '/images/press-4.jpg', caption: '貴賓到店品嚐推薦' },
+  { img: '/images/press-5.jpg', caption: '業界好友站台推薦' },
+  { img: '/images/press-6.jpg', caption: '在地愛心公益捐贈' },
+]
+
 export const PRESS_VIDEOS: PressVideo[] = [
   { label: '2025', title: '2025 金牌燒鵝爭霸賽 專訪', youtubeId: '95S0JgrqrqI' },
   { label: '2024', title: '2024 金牌燒鵝爭霸賽 專訪', youtubeId: 'n6YGi_JCHNU' },
