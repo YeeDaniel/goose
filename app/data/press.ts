@@ -21,9 +21,9 @@ export interface PressPhoto {
 // 採訪花絮與貴賓合影 — owner-provided promotional photos.
 export const PRESS_GALLERY: PressPhoto[] = [
   { img: '/images/press-1.jpg', caption: '電視媒體到店採訪拍攝' },
-  { img: '/images/press-3.jpg', caption: '郭芳銘主廚與現烤金牌燒鵝' },
+  { img: '/images/press-3.jpg', caption: '郭芳銘主廚與現烤燒鵝' },
   { img: '/images/press-2.jpg', caption: '招牌前團隊合影' },
-  { img: '/images/press-4.jpg', caption: '貴賓到店品嚐推薦' },
+  { img: '/images/press-4.jpg', caption: '外繪活動，貴賓品嚐好評' },
   { img: '/images/press-5.jpg', caption: '業界好友站台推薦' },
   { img: '/images/press-6.jpg', caption: '在地愛心公益捐贈' },
 ]
@@ -40,6 +40,7 @@ export const PRESS_ARTICLES: PressArticle[] = [
     outlet: 'Yahoo 新聞',
     title: '鵝邸家燒鵝專賣 媒體報導',
     url: 'https://tw.news.yahoo.com/share/b337c8a5-ca82-3a21-85b8-ce3a14564fb9',
+    date: '2025.12.07',
   },
   {
     outlet: '聯合新聞網 UDN',
