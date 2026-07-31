@@ -20,6 +20,14 @@ export const SITE = {
   awardCompetition: '金牌燒鵝爭霸賽',
   awardPrize: 'NT$ 18,000 金牌獎',
 
+  // Local-search geography. 「台中燒鵝」is dominated by 市區 shops (proximity wins),
+  // so the copy and schema target where we can actually rank: 大甲 / 海線 / 鎮瀾宮商圈.
+  landmark: '大甲鎮瀾宮商圈',
+  areaServed: ['臺中市大甲區', '臺中海線', '臺中市'],
+  priceRange: 'NT$50–1600',
+  // Photos for Restaurant JSON-LD `image` — Google wants at least one.
+  images: ['/images/hero-bg.jpg', '/images/goose-hero.jpg', '/images/chef.jpg', '/images/og.jpg'],
+
   // Contact / location (NAP) — owner confirmed.
   phone: '0988-844-688',
   phoneE164: '+886988844688',
@@ -61,8 +69,9 @@ export const SITE = {
   googleReviewsUrl:
     'https://www.google.com/maps/place/%E9%B5%9D%E9%82%B8%E5%AE%B6%E7%87%92%E9%B5%9D%E5%B0%88%E8%B3%A3/@24.347744,120.626421,17z/data=!4m8!3m7!1s0x34690e0222afe923:0x3d5fbf439c55d424!9m1!1b1',
 
-  // Canonical site URL — TODO.
-  url: 'https://www.example.com',
+  // Canonical site URL. Apex, no www — www.edijia.com 301s here, so every
+  // canonical / JSON-LD @id / sitemap entry points at one address only.
+  url: 'https://edijia.com',
 } as const
 
 export type Site = typeof SITE

@@ -21,6 +21,10 @@ useSeoMeta({
 })
 
 useHead({
+  // Lives here, not in nuxt.config: head values there must be serializable, so a
+  // function titleTemplate is silently dropped and every title loses the brand.
+  titleTemplate: (title?: string) =>
+    title ? `${title}｜${SITE.name}` : `${SITE.fullName}｜台中大甲金牌燒鵝外帶`,
   link: [{ rel: 'canonical', href: canonical }],
 })
 </script>

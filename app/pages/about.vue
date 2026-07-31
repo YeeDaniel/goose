@@ -2,8 +2,8 @@
 import { SITE } from '~/data/site'
 
 useSeoMeta({
-  title: '關於鵝邸家',
-  description: `${SITE.chef} 主廚十年匠心與三連霸金牌的榮耀故事 — ${SITE.name} 品牌故事。`,
+  title: '關於鵝邸家 · 郭芳銘主廚十年匠心',
+  description: `${SITE.chef} 主廚十年匠心與 2023-2025 三連霸金牌的榮耀故事。${SITE.fullName}扎根台中大甲，從選鵝、風乾到炙烤的職人工序，成就一口皮脆肉嫩的金牌燒鵝。`,
 })
 
 // Entity-linked milestones (dev-spec §3.2): 郭芳銘主廚 / 十年經驗 / 連續三年金牌得主.

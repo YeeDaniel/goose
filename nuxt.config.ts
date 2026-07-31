@@ -22,8 +22,6 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: 'zh-Hant' },
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      titleTemplate: (title?: string) =>
-        title ? `${title}｜${SITE.name}` : `${SITE.name}｜${SITE.tagline}`,
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

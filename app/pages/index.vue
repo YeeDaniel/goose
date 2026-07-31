@@ -4,8 +4,9 @@ import { MENU } from '~/data/menu'
 import { FAQ } from '~/data/faq'
 
 useSeoMeta({
-  title: '首頁',
-  description: SITE.description,
+  title: '台中大甲金牌燒鵝外帶自取',
+  description:
+    '台中大甲金牌燒鵝｜鵝邸家燒鵝專賣，2023-2025 連續三年金牌得主。郭芳銘主廚十年匠心，週六日上午現烤現斬，皮脆肉嫩。臺中市大甲區新政路25號，鎮瀾宮商圈旁，LINE 預訂外帶自取。',
 })
 
 // Home surfaces menu + FAQ structured data too (SAO).
@@ -31,7 +32,11 @@ const homeFaq = FAQ.slice(0, 3)
         class="absolute inset-0 h-full w-full object-cover object-center"
       />
       <!-- Overlays for text legibility — neutral dark, weighted left (not a red wash). -->
-      <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
+      <!-- Phones read full-width, so darken top-to-bottom there; the left-weighted
+           wash only makes sense once the copy sits in a column. -->
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/60 to-black/70 md:bg-gradient-to-r md:from-black/75 md:via-black/45 md:to-black/10"
+      />
       <div class="absolute inset-0 bg-gradient-to-t from-goose-deep/45 to-transparent" />
 
       <div class="container-page relative py-24 md:py-32">
@@ -43,6 +48,10 @@ const homeFaq = FAQ.slice(0, 3)
           <p class="mt-4 text-lg text-cream/90 [text-shadow:0_1px_6px_rgba(0,0,0,0.4)]">
             {{ SITE.chef }} 主廚 {{ SITE.yearsOfCraft }} 年匠心，皮脆肉嫩、油亮多汁。<br />
             僅提供外帶自取，只為那一口剛出爐的酥脆。
+          </p>
+          <!-- Where + when, in the hero: the two facts local searchers want first. -->
+          <p class="mt-3 text-base text-cream/85 [text-shadow:0_1px_6px_rgba(0,0,0,0.4)]">
+            {{ SITE.address.region }}{{ SITE.address.locality }}・{{ SITE.landmark }}旁・週六日 07:00–12:00
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
             <LineButton variant="light" />

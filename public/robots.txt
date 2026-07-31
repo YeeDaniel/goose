@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# TODO: point to the real canonical domain sitemap.
-Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://edijia.com/sitemap.xml

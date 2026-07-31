@@ -2,8 +2,8 @@
 import { SITE } from '~/data/site'
 
 useSeoMeta({
-  title: '金牌饗宴回顧',
-  description: `${SITE.name} 金牌饗宴回顧：大型宴席、尾牙紀實，見證品牌好口碑。純展示。`,
+  title: '金牌饗宴回顧 · 台中大甲宴席紀實',
+  description: `${SITE.fullName}金牌饗宴回顧：台中大甲在地辦桌、大型宴席與尾牙紀實，金牌燒鵝端上無數重要場合。純展示，未開放線上接單。`,
 })
 
 // Display-only gallery (design-spec §1): NO booking / enquiry button here.

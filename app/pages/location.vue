@@ -3,8 +3,8 @@ import { SITE } from '~/data/site'
 import { FAQ } from '~/data/faq'
 
 useSeoMeta({
-  title: '服務據點與常見問題',
-  description: `${SITE.name} 服務據點、營業時間與常見問題。堅持品質，僅提供外帶自取。`,
+  title: '台中大甲店址 · 營業時間與常見問題',
+  description: `${SITE.fullName}地址：${SITE.address.region}${SITE.address.locality}${SITE.address.street}，${SITE.landmark}旁。營業時間週六、週日 07:00–12:00，售完為止。台中海線金牌燒鵝，僅提供外帶自取，恕不內用與宅配。`,
 })
 
 // FAQPage structured data (dev-spec §3.2) — includes the required no-delivery QA.
@@ -13,7 +13,10 @@ useFaqJsonLd(FAQ)
 
 <template>
   <div class="container-page py-14">
-    <SectionHeading title="服務據點與常見問題" subtitle="現點外帶 · 自取" />
+    <SectionHeading
+      title="服務據點與常見問題"
+      :subtitle="`${SITE.address.region}${SITE.address.locality}${SITE.address.street} · ${SITE.landmark}旁 · 外帶自取`"
+    />
 
     <!-- Location -->
     <section class="grid gap-8 md:grid-cols-2">

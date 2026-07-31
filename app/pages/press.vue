@@ -4,8 +4,8 @@ import { PRESS_VIDEOS, PRESS_ARTICLES, PRESS_GALLERY } from '~/data/press'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/outline'
 
 useSeoMeta({
-  title: '媒體報導',
-  description: `${SITE.name} 媒體報導與電視專訪：金牌燒鵝爭霸賽三連霸、大甲鎮瀾宮國際點心站，多家媒體採訪紀實。`,
+  title: '媒體報導 · 台中大甲燒鵝專訪',
+  description: `${SITE.fullName}媒體報導與電視專訪：金牌燒鵝爭霸賽三連霸、大甲鎮瀾宮國際點心站，Yahoo、UDN、中時、中央社、華視等多家媒體採訪紀實。`,
 })
 </script>
 
@@ -44,12 +44,13 @@ useSeoMeta({
       <h2 class="mb-5 flex items-center gap-2 font-serif text-2xl font-bold text-goose">
         採訪花絮・貴賓推薦<span class="h-px flex-1 bg-gold/40" />
       </h2>
-      <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Two-up on phones: portrait shots at full width made the page a mile long. -->
+      <ul class="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
         <li v-for="p in PRESS_GALLERY" :key="p.img" class="overflow-hidden rounded-2xl bg-white/60 shadow-sm">
-          <div class="aspect-[3/4]">
+          <div class="aspect-[3/4] overflow-hidden">
             <PlaceholderImage :src="p.img" :alt="p.caption" />
           </div>
-          <p class="px-4 py-3 text-sm text-neutral-600">{{ p.caption }}</p>
+          <p class="px-3 py-2.5 text-xs text-neutral-600 sm:px-4 sm:py-3 sm:text-sm">{{ p.caption }}</p>
         </li>
       </ul>
     </section>
