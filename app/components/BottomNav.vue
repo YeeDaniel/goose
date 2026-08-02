@@ -13,28 +13,31 @@ const items = [
 
 <template>
   <nav
-    class="fixed inset-x-0 bottom-0 z-30 border-t border-black/5 bg-cream/95 backdrop-blur md:hidden"
+    class="fixed inset-x-0 bottom-0 z-30 border-t border-black/5 bg-cream/95 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden"
     aria-label="主要功能導覽"
   >
     <ul class="mx-auto grid max-w-screen-sm grid-cols-3">
       <li v-for="item in items" :key="item.label">
+        <!-- `flex w-full` is load-bearing: .tap-target is inline-flex, so without it
+             each link shrinks to its label width and sits flush left in its cell —
+             three different label lengths, three different offsets. -->
         <a
           v-if="item.external"
           :href="item.href"
           target="_blank"
           rel="noopener"
-          class="tap-target flex-col gap-1 py-2 text-xs font-medium text-goose"
+          class="tap-target flex w-full flex-col gap-1 py-2 text-xs font-medium text-goose"
         >
           <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
-          <span>{{ item.label }}</span>
+          <span class="whitespace-nowrap">{{ item.label }}</span>
         </a>
         <NuxtLink
           v-else
           :to="item.to"
-          class="tap-target flex-col gap-1 py-2 text-xs font-medium text-neutral-700"
+          class="tap-target flex w-full flex-col gap-1 py-2 text-xs font-medium text-neutral-700"
         >
           <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
-          <span>{{ item.label }}</span>
+          <span class="whitespace-nowrap">{{ item.label }}</span>
         </NuxtLink>
       </li>
     </ul>

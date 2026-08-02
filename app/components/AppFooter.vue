@@ -24,9 +24,13 @@ const nav = [
 
       <nav class="text-sm" aria-label="網站導覽">
         <p class="font-semibold text-gold">網站導覽</p>
-        <ul class="mt-2 space-y-1.5">
+        <!-- Full-width rows with a 44px touch height on phones; compact on desktop. -->
+        <ul class="mt-1 sm:mt-2 sm:space-y-1.5">
           <li v-for="item in nav" :key="item.to">
-            <NuxtLink :to="item.to" class="text-cream/80 transition hover:text-gold">
+            <NuxtLink
+              :to="item.to"
+              class="block py-3 text-cream/80 transition hover:text-gold sm:py-0"
+            >
               {{ item.label }}
             </NuxtLink>
           </li>
@@ -42,8 +46,25 @@ const nav = [
 
       <div class="text-sm">
         <p class="font-semibold text-gold">聯絡我們</p>
-        <p class="mt-2 text-cream/80">電話：{{ SITE.phone }}</p>
-        <p class="text-cream/80">{{ SITE.address.region }}{{ SITE.address.locality }}{{ SITE.address.street }}</p>
+        <!-- Tappable on phones: dial the shop, open directions. -->
+        <p class="mt-1 sm:mt-2">
+          <a
+            :href="`tel:${SITE.phoneE164}`"
+            class="block py-3 text-cream/80 transition hover:text-gold sm:py-0"
+          >
+            電話：{{ SITE.phone }}
+          </a>
+        </p>
+        <p>
+          <a
+            :href="SITE.mapsDirectionsUrl"
+            target="_blank"
+            rel="noopener"
+            class="block py-3 text-cream/80 transition hover:text-gold sm:py-0"
+          >
+            {{ SITE.address.region }}{{ SITE.address.locality }}{{ SITE.address.street }}
+          </a>
+        </p>
         <div class="mt-4">
           <LineButton variant="light" />
         </div>
@@ -52,7 +73,7 @@ const nav = [
           :href="SITE.facebookUrl"
           target="_blank"
           rel="noopener"
-          class="mt-3 inline-block text-sm text-cream/80 underline-offset-4 hover:text-gold hover:underline"
+          class="mt-1 inline-block py-3 text-sm text-cream/80 underline-offset-4 hover:text-gold hover:underline sm:mt-3 sm:py-0"
         >
           Facebook 粉絲專頁 →
         </a>

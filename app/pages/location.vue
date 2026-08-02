@@ -42,7 +42,15 @@ useFaqJsonLd(FAQ)
           </div>
           <div>
             <dt class="font-semibold text-neutral-800">電話</dt>
-            <dd class="text-neutral-600">{{ SITE.phone }}</dd>
+            <dd>
+              <!-- tel: so phones dial straight from the page. -->
+              <a
+                :href="`tel:${SITE.phoneE164}`"
+                class="inline-flex min-h-touch items-center text-goose underline-offset-4 hover:underline"
+              >
+                {{ SITE.phone }}
+              </a>
+            </dd>
           </div>
           <div>
             <dt class="font-semibold text-neutral-800">營業時間</dt>

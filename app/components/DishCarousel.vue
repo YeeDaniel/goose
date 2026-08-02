@@ -21,7 +21,9 @@ defineProps<{ slides: Slide[] }>()
           <!-- overflow-hidden is load-bearing: as a flex item, min-height:auto would
                otherwise let the photo's intrinsic height override the aspect ratio. -->
           <div class="aspect-[4/3] overflow-hidden">
-            <PlaceholderImage variant="dish" :src="slide.img" :alt="slide.name" :pending="true" />
+            <!-- No 「照片準備中」 chip on the home page — it reads as an unfinished
+                 site to customers. The branded watermark carries the empty slot. -->
+            <PlaceholderImage variant="dish" :src="slide.img" :alt="slide.name" :pending="false" />
           </div>
           <div class="flex-1 bg-white/70 p-4">
             <p class="font-serif text-lg font-bold text-goose">{{ slide.name }}</p>
