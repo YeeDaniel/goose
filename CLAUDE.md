@@ -13,10 +13,10 @@ core goals are: **brand rejuvenation (品牌年輕化)**, **deepening the in-per
 Brand facts to weave through the copy: head chef **郭芳銘**, **十年 (ten years)** of craft, and
 **2023–2025 連續三年金牌得主 (three-year consecutive gold-medal winner)**.
 
-> **Status:** Nuxt 4 app scaffolded and building (`npm run build` → Cloudflare Pages output). Real menu,
-> weekend hours (週六日 07:00–12:00), and the LINE OA link are wired in. Still `TODO` in
-> [app/data/site.ts](app/data/site.ts): address / phone / geo / Google Maps URL, plus real dish &
-> event photography (placeholders in the page components).
+> **Status:** Live at [edijia.com](https://edijia.com). Menu, weekend hours (週六日 07:00–12:00),
+> LINE OA link, store NAP (address / phone / geo / Google Maps), press coverage, and real dish,
+> chef, and event photography are all wired in. Remaining gap: 蜜汁叉燒 has no portrait shot yet
+> (deliberately left blank rather than cropped — see the revert in the history).
 
 ## Tech stack
 
@@ -26,9 +26,14 @@ Brand facts to weave through the copy: head chef **郭芳銘**, **十年 (ten ye
 
 ## Deployment
 
-- **Host:** Cloudflare Pages.
+- **Host:** Cloudflare Pages (project name: `goose`).
 - **Engine:** Nuxt's underlying Nitro server, configured with `preset: 'cloudflare_pages'`.
-- **CI/CD:** bound to the GitHub repository — push to `main` auto-deploys.
+- **Build:** command `npm run build`, output directory **`dist`** (where the `cloudflare_pages`
+  preset writes), root directory unset. Build system version 3.
+- **CI/CD:** bound to the GitHub repository — push to **`master`** (the production branch) auto-deploys.
+  There are no deploy hooks configured, so this webhook is the *only* deployment trigger. If the
+  GitHub link ever breaks (e.g. after a repo rename), reconnect it under
+  Cloudflare → Workers & Pages → goose → Settings → Build → Git repository.
 - **CDN:** global CDN so high-res food imagery and 金牌饗宴回顧 event photos load fast.
 
 ## Site architecture (sitemap)
