@@ -82,6 +82,11 @@ Source of truth: [docs/dev-spec.md](docs/dev-spec.md). Optimized for AI search (
 - **No online-ordering or delivery flow.** Takeout pickup (外帶自取) only — no dine-in (無內用),
   no delivery; do not add cart, checkout, delivery, dine-in seating/booking, or public booking
   buttons (Brand Portfolio stays display-only).
+- **No `target="_blank"` on external links.** Most mobile visitors arrive from the LINE OA or the
+  Facebook 粉專, i.e. inside an in-app WebView, which silently drops `_blank` navigations (Android
+  WebView needs `setSupportMultipleWindows`/`onCreateWindow`; iOS WKWebView likewise) — the tap
+  looks dead. Same-tab navigation works everywhere and hands `lin.ee` / maps universal links
+  cleanly to the OS. A customer reported the dead LINE button; fixed 2026-08-10.
 - **Preserve brand Chinese copy verbatim** — page names, dish names, and slogans stay in Traditional Chinese.
 - **TypeScript strict**; SSR-friendly, semantic HTML.
 

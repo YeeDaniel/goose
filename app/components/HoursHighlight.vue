@@ -20,7 +20,7 @@ import { ClockIcon } from '@heroicons/vue/24/solid'
         </p>
       </div>
     </div>
-    <a :href="SITE.mapsDirectionsUrl" target="_blank" rel="noopener" class="btn-primary shrink-0">
+    <a :href="SITE.mapsDirectionsUrl" class="btn-primary shrink-0">
       導航到店
     </a>
   </div>

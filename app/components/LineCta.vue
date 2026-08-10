@@ -4,13 +4,12 @@ import { SITE } from '~/data/site'
 // Floating global CTA — the site's only explicit conversion goal (design-spec §3).
 // Desktop/tablet only (md+); on mobile the fixed BottomNav already carries the
 // LINE CTA, so we hide this to avoid two LINE buttons stacked at the bottom.
+// No target="_blank" — see LineButton.vue for why (in-app WebViews drop `_blank`).
 </script>
 
 <template>
   <a
     :href="SITE.lineUrl"
-    target="_blank"
-    rel="noopener"
     class="btn-primary fixed right-4 bottom-6 z-40 hidden shadow-lg md:inline-flex"
     aria-label="開啟 LINE 官方帳號預約或點餐"
   >
