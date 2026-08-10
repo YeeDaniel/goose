@@ -4,6 +4,9 @@ import { BookOpenIcon, ChatBubbleOvalLeftEllipsisIcon, MapPinIcon } from '@heroi
 
 // Fixed mobile bottom navigation (design-spec §2.2): 查看菜單 / LINE 立即預約 / 導航到店.
 // Hidden on md+ where the header nav takes over.
+//
+// Both external links navigate in the same tab — see LineButton.vue for why
+// target="_blank" is banned site-wide.
 const items = [
   { label: '查看菜單', to: '/menu', icon: BookOpenIcon, external: false },
   { label: 'LINE 立即預約', href: SITE.lineUrl, icon: ChatBubbleOvalLeftEllipsisIcon, external: true },
@@ -24,8 +27,6 @@ const items = [
         <a
           v-if="item.external"
           :href="item.href"
-          target="_blank"
-          rel="noopener"
           class="tap-target flex w-full flex-col gap-1 py-2 text-xs font-medium text-goose"
         >
           <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />

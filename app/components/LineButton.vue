@@ -2,6 +2,12 @@
 import { SITE } from '~/data/site'
 
 // LINE CTA link (O2O). `variant`: solid (red, on light bg) | light (cream, on red/photo bg).
+//
+// Deliberately NO target="_blank": most mobile visitors arrive from the LINE OA or the
+// Facebook 粉專, i.e. inside an in-app WebView, which drops `_blank` navigations silently
+// (Android WebView needs setSupportMultipleWindows/onCreateWindow; iOS WKWebView likewise).
+// The tap then does nothing at all. Same-tab navigation works everywhere and gives the OS
+// the cleanest hand-off from the lin.ee universal link into the LINE app.
 withDefaults(defineProps<{ label?: string; block?: boolean; variant?: 'solid' | 'light' }>(), {
   label: 'LINE 預約／點餐',
   block: false,
@@ -12,8 +18,6 @@ withDefaults(defineProps<{ label?: string; block?: boolean; variant?: 'solid' | 
 <template>
   <a
     :href="SITE.lineUrl"
-    target="_blank"
-    rel="noopener"
     :class="[variant === 'light' ? 'btn-light' : 'btn-primary', { 'w-full': block }]"
     aria-label="開啟 LINE 官方帳號預約或點餐"
   >

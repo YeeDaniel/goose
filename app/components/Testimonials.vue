@@ -17,8 +17,6 @@ import { TESTIMONIALS } from '~/data/testimonials'
     <p class="mt-6 text-center">
       <a
         :href="SITE.googleReviewsUrl"
-        target="_blank"
-        rel="noopener"
         class="font-semibold text-goose hover:underline"
       >
         在 Google 看更多評論 →

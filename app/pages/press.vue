@@ -64,8 +64,6 @@ useSeoMeta({
         <li v-for="a in PRESS_ARTICLES" :key="a.url">
           <a
             :href="a.url"
-            target="_blank"
-            rel="noopener"
             class="flex h-full flex-col justify-between rounded-2xl bg-white/60 p-5 shadow-sm transition hover:bg-gold/10 hover:shadow-md"
           >
             <div class="flex items-start justify-between gap-3">

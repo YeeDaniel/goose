@@ -44,7 +44,7 @@ const tileClass =
         <component :is="a.icon" class="h-7 w-7 text-goose" aria-hidden="true" />
         <span>{{ a.label }}</span>
       </NuxtLink>
-      <a v-else :href="a.href" target="_blank" rel="noopener" :class="tileClass">
+      <a v-else :href="a.href" :class="tileClass">
         <component :is="a.icon" class="h-7 w-7 text-goose" aria-hidden="true" />
         <span>{{ a.label }}</span>
       </a>

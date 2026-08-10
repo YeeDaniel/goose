@@ -58,8 +58,6 @@ const nav = [
         <p>
           <a
             :href="SITE.mapsDirectionsUrl"
-            target="_blank"
-            rel="noopener"
             class="block py-3 text-cream/80 transition hover:text-gold sm:py-0"
           >
             {{ SITE.address.region }}{{ SITE.address.locality }}{{ SITE.address.street }}
@@ -71,8 +69,6 @@ const nav = [
         <a
           v-if="SITE.facebookUrl"
           :href="SITE.facebookUrl"
-          target="_blank"
-          rel="noopener"
           class="mt-1 inline-block py-3 text-sm text-cream/80 underline-offset-4 hover:text-gold hover:underline sm:mt-3 sm:py-0"
         >
           Facebook 粉絲專頁 →
