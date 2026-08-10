@@ -2,6 +2,13 @@
 // Source of truth: docs/design-spec.md, docs/dev-spec.md
 // NOTE: values marked TODO are placeholders — replace with the real business data.
 
+// Destination text for the Google Maps directions deep link. Deliberately the shop name
+// plus the full address rather than a lat/lng pair: the Google Maps *app* does not reverse
+// geocode a bare coordinate, so a coordinate destination arrives labelled「已放置圖釘」
+// instead of the shop name. This text resolves to the same Maps feature
+// (ftid 0x34690e0222afe923:0x3d5fbf439c55d424) at the same coordinates as SITE.geo.
+const DIRECTIONS_DESTINATION = '鵝邸家燒鵝專賣 437臺中市大甲區朝陽里新政路25號'
+
 export const SITE = {
   name: '鵝邸家',
   fullName: '鵝邸家燒鵝專賣',
@@ -45,7 +52,7 @@ export const SITE = {
   // Google Maps — resolved place: 鵝邸家燒鵝專賣.
   mapsPlaceUrl: 'https://maps.app.goo.gl/1tL6KqoGVZ9afdb87',
   mapsEmbedUrl: 'https://maps.google.com/maps?q=24.347744,120.626421&z=17&output=embed',
-  mapsDirectionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=24.347744,120.626421',
+  mapsDirectionsUrl: `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(DIRECTIONS_DESTINATION)}`,
 
   // Opening hours — owner confirmed: 週六、週日 07:00–12:00 (售完為止)。
   openingHours: [
