@@ -72,9 +72,14 @@ export const SITE = {
   lineUrl: 'https://lin.ee/vsPOQej',
   // Facebook 粉絲專頁.
   facebookUrl: 'https://www.facebook.com/goosehometa',
-  // Google 商家評論.
+  // Google 商家評論 — opens the place card with the reviews tab selected (`!9m1!1b1`).
+  // The `data=` payload is a length-prefixed protobuf: `!4m7` and `!3m6` must match the
+  // element count that follows, and the `!8m2!3d<lat>!4d<lng>` block is required. An
+  // earlier hand-written value declared 8/7 elements but supplied only 2, so Google
+  // discarded the whole payload and dropped the visitor on a bare coordinate map with no
+  // place card at all. Do not edit these counts by hand — copy a fresh URL from Maps.
   googleReviewsUrl:
-    'https://www.google.com/maps/place/%E9%B5%9D%E9%82%B8%E5%AE%B6%E7%87%92%E9%B5%9D%E5%B0%88%E8%B3%A3/@24.347744,120.626421,17z/data=!4m8!3m7!1s0x34690e0222afe923:0x3d5fbf439c55d424!9m1!1b1',
+    'https://www.google.com/maps/place/%E9%B5%9D%E9%82%B8%E5%AE%B6%E7%87%92%E9%B5%9D%E5%B0%88%E8%B3%A3/@24.347744,120.626421,17z/data=!4m7!3m6!1s0x34690e0222afe923:0x3d5fbf439c55d424!8m2!3d24.347744!4d120.626421!9m1!1b1',
 
   // Canonical site URL. Apex, no www — www.edijia.com 301s here, so every
   // canonical / JSON-LD @id / sitemap entry points at one address only.
