@@ -20,17 +20,7 @@ useSeoMeta({
       </h2>
       <ul class="grid gap-6 sm:grid-cols-2">
         <li v-for="v in PRESS_VIDEOS" :key="v.youtubeId" class="overflow-hidden rounded-2xl bg-white/60 shadow-sm">
-          <div class="aspect-video">
-            <iframe
-              class="h-full w-full"
-              :src="`https://www.youtube-nocookie.com/embed/${v.youtubeId}`"
-              :title="v.title"
-              loading="lazy"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            />
-          </div>
+          <YoutubeEmbed :youtube-id="v.youtubeId" :title="v.title" />
           <div class="flex items-center gap-3 p-4">
             <span class="rounded-full bg-goose px-2.5 py-0.5 text-xs font-semibold text-cream">{{ v.label }}</span>
             <p class="font-medium text-neutral-800">{{ v.title }}</p>
