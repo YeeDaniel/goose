@@ -52,7 +52,11 @@ const embedSrc = computed(
       <span
         class="tap-target absolute left-1/2 top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2 rounded-full bg-goose/90 shadow-lg transition group-hover:bg-goose"
       >
-        <svg viewBox="0 0 24 24" class="h-6 w-6 translate-x-0.5 text-cream" fill="currentColor" aria-hidden="true">
+        <!-- No optical nudge here: the path's vertices are (8,4.71) (8,19.29) (19.96,12),
+             so its centroid already sits at x=11.99 — the viewBox centre. The bounding box
+             leans right because a triangle's visual weight is at its centroid, not its box.
+             A translate-x on top of that shifts it off centre twice over. -->
+        <svg viewBox="0 0 24 24" class="h-6 w-6 text-cream" fill="currentColor" aria-hidden="true">
           <path d="M8 5.14v13.72a.5.5 0 0 0 .76.43l11.2-6.86a.5.5 0 0 0 0-.86L8.76 4.71A.5.5 0 0 0 8 5.14Z" />
         </svg>
       </span>
