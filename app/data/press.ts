@@ -23,7 +23,7 @@ export const PRESS_GALLERY: PressPhoto[] = [
   { img: '/images/press-1.jpg', caption: '電視媒體到店採訪拍攝' },
   { img: '/images/press-3.jpg', caption: '郭芳銘主廚與現烤燒鵝' },
   { img: '/images/press-2.jpg', caption: '招牌前團隊合影' },
-  { img: '/images/press-4.jpg', caption: '外繪活動，貴賓品嚐好評' },
+  { img: '/images/press-4.jpg', caption: '外燴活動，貴賓品嚐好評' },
   { img: '/images/press-5.jpg', caption: '業界好友站台推薦' },
   { img: '/images/press-6.jpg', caption: '在地愛心公益捐贈' },
 ]
