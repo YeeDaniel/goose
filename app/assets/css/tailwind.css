@@ -6,13 +6,16 @@
   html {
     scroll-behavior: smooth;
   }
+  /* One typeface site-wide: Noto Serif TC. The site used to pair it with Noto Sans TC
+     — serif headings over sans body — but the two families read as two different sites
+     on a phone. Hierarchy now comes from weight and size alone. */
   body {
-    @apply bg-cream text-neutral-800 font-sans font-medium antialiased;
+    @apply bg-cream text-neutral-800 font-serif font-medium antialiased;
   }
   h1,
   h2,
   h3 {
-    @apply font-serif font-black;
+    @apply font-black;
   }
 }
 

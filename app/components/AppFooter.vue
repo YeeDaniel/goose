@@ -15,7 +15,7 @@ const nav = [
   <footer class="border-t border-black/5 bg-goose text-cream/90">
     <div class="container-page grid gap-6 py-10 sm:grid-cols-2 lg:grid-cols-4">
       <div>
-        <p class="font-serif text-xl font-bold text-gold">{{ SITE.name }}</p>
+        <p class="text-xl font-bold text-gold">{{ SITE.name }}</p>
         <p class="mt-1 text-sm">{{ SITE.tagline }}</p>
         <p class="mt-3 text-sm leading-relaxed text-cream/70">
           {{ SITE.chef }} 主廚 · {{ SITE.yearsOfCraft }} 年匠心

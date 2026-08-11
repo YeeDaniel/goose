@@ -19,7 +19,7 @@ useMenuJsonLd()
          Big appetite shots live on the Home carousel, not here. -->
     <div class="mx-auto max-w-2xl space-y-10">
       <section v-for="cat in MENU" :key="cat.id" :id="cat.id" class="scroll-mt-20">
-        <h2 class="mb-3 flex items-center gap-3 font-serif text-xl font-bold text-goose sm:text-2xl">
+        <h2 class="mb-3 flex items-center gap-3 text-xl font-bold text-goose sm:text-2xl">
           {{ cat.name }}
           <span class="h-px flex-1 bg-gold/40" />
         </h2>

@@ -20,7 +20,7 @@ const nav = [
   >
     <div class="container-page flex h-16 items-center justify-between">
       <NuxtLink to="/" class="flex items-baseline gap-2" :aria-label="`${SITE.name} 首頁`">
-        <span class="font-serif text-2xl font-bold text-goose">{{ SITE.name }}</span>
+        <span class="text-2xl font-bold text-goose">{{ SITE.name }}</span>
         <span class="hidden text-xs text-gold xl:inline">{{ SITE.tagline }}</span>
       </NuxtLink>
 

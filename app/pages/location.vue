@@ -32,7 +32,7 @@ useFaqJsonLd(FAQ)
       </div>
 
       <div class="rounded-2xl bg-white/60 p-6 shadow-sm">
-        <h2 class="font-serif text-xl font-bold text-goose">店家資訊</h2>
+        <h2 class="text-xl font-bold text-goose">店家資訊</h2>
         <dl class="mt-4 space-y-3 text-sm">
           <div>
             <dt class="font-semibold text-neutral-800">地址</dt>
@@ -74,7 +74,7 @@ useFaqJsonLd(FAQ)
         <PlaceholderImage src="/images/landmark.jpg" alt="大甲鎮瀾宮商圈 鵝邸家現烤燒鵝" />
       </div>
       <figcaption>
-        <h3 class="font-serif text-lg font-bold text-goose">就在大甲鎮瀾宮商圈</h3>
+        <h3 class="text-lg font-bold text-goose">就在大甲鎮瀾宮商圈</h3>
         <p class="mt-2 text-sm leading-relaxed text-neutral-600">
           鵝邸家座落大甲，鵝香飄過鎮瀾宮商圈。假日清晨現烤、現斬，皮脆油亮，售完為止。
           建議先透過 LINE 預訂，到店取餐免久候。

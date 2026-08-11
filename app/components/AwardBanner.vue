@@ -15,7 +15,7 @@ import { SITE } from '~/data/site'
 
       <div class="flex flex-col justify-center gap-3 p-8">
         <GoldBadge :text="SITE.awardCompetition" />
-        <h2 class="font-serif text-3xl font-bold text-gold">{{ SITE.awardPrize }}</h2>
+        <h2 class="text-3xl font-bold text-gold">{{ SITE.awardPrize }}</h2>
         <p class="leading-relaxed text-cream/85">
           {{ SITE.chef }} 主廚率隊出征「{{ SITE.awardCompetition }}」，
           {{ SITE.award }}。一隻燒鵝，燒出十年匠心與三連霸的實力。

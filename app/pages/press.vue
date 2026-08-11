@@ -15,7 +15,7 @@ useSeoMeta({
 
     <!-- Interview videos -->
     <section>
-      <h2 class="mb-5 flex items-center gap-2 font-serif text-2xl font-bold text-goose">
+      <h2 class="mb-5 flex items-center gap-2 text-2xl font-bold text-goose">
         電視・影音專訪<span class="h-px flex-1 bg-gold/40" />
       </h2>
       <ul class="grid gap-6 sm:grid-cols-2">
@@ -31,7 +31,7 @@ useSeoMeta({
 
     <!-- Media & guest photo gallery -->
     <section class="mt-16">
-      <h2 class="mb-5 flex items-center gap-2 font-serif text-2xl font-bold text-goose">
+      <h2 class="mb-5 flex items-center gap-2 text-2xl font-bold text-goose">
         採訪花絮・貴賓推薦<span class="h-px flex-1 bg-gold/40" />
       </h2>
       <!-- Two-up on phones: portrait shots at full width made the page a mile long. -->
@@ -47,7 +47,7 @@ useSeoMeta({
 
     <!-- Press articles -->
     <section class="mt-16">
-      <h2 class="mb-5 flex items-center gap-2 font-serif text-2xl font-bold text-goose">
+      <h2 class="mb-5 flex items-center gap-2 text-2xl font-bold text-goose">
         新聞報導<span class="h-px flex-1 bg-gold/40" />
       </h2>
       <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -57,7 +57,7 @@ useSeoMeta({
             class="flex h-full flex-col justify-between rounded-2xl bg-white/60 p-5 shadow-sm transition hover:bg-gold/10 hover:shadow-md"
           >
             <div class="flex items-start justify-between gap-3">
-              <span class="font-serif text-lg font-bold text-goose">{{ a.outlet }}</span>
+              <span class="text-lg font-bold text-goose">{{ a.outlet }}</span>
               <ArrowTopRightOnSquareIcon class="h-5 w-5 shrink-0 text-neutral-400" aria-hidden="true" />
             </div>
             <p class="mt-2 text-sm text-neutral-600">{{ a.title }}</p>

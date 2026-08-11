@@ -38,7 +38,7 @@ const highlights = [
           <PlaceholderImage variant="goose" :src="item.img" :alt="item.title" :pending="true" />
         </div>
         <div class="p-5">
-          <h3 class="font-serif text-lg font-bold text-goose">{{ item.title }}</h3>
+          <h3 class="text-lg font-bold text-goose">{{ item.title }}</h3>
           <p class="mt-1 text-sm leading-relaxed text-neutral-600">{{ item.note }}</p>
         </div>
       </li>

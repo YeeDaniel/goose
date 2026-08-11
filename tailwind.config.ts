@@ -19,8 +19,9 @@ export default <Partial<Config>>{
           DEFAULT: '#FCF9F2',
         },
       },
+      // Single family site-wide — no `sans` token on purpose, so `font-sans`
+      // cannot creep back in and re-split the page into two typefaces.
       fontFamily: {
-        sans: ['"Noto Sans TC"', 'system-ui', 'sans-serif'],
         serif: ['"Noto Serif TC"', 'serif'],
       },
       minHeight: {

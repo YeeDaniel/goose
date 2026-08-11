@@ -44,7 +44,7 @@ withDefaults(
     >
       <path d="M12 1.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 16.98l-5.8 3.05 1.11-6.46-4.7-4.58 6.49-.94L12 1.5z" />
     </svg>
-    <span v-else class="select-none font-serif text-7xl font-black text-goose/15" aria-hidden="true">鵝</span>
+    <span v-else class="select-none text-7xl font-black text-goose/15" aria-hidden="true">鵝</span>
 
     <span
       v-if="label"

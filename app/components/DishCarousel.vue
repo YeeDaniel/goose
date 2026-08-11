@@ -26,7 +26,7 @@ defineProps<{ slides: Slide[] }>()
             <PlaceholderImage variant="dish" :src="slide.img" :alt="slide.name" :pending="false" />
           </div>
           <div class="flex-1 bg-white/70 p-4">
-            <p class="font-serif text-lg font-bold text-goose">{{ slide.name }}</p>
+            <p class="text-lg font-bold text-goose">{{ slide.name }}</p>
             <p class="mt-1 text-sm leading-relaxed text-neutral-600">{{ slide.note }}</p>
           </div>
         </div>

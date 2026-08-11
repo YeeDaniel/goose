@@ -42,7 +42,7 @@ const homeFaq = FAQ.slice(0, 3)
       <div class="container-page relative py-24 md:py-32">
         <div class="max-w-xl">
           <GoldBadge class="mb-5" />
-          <h1 class="font-serif text-4xl font-bold leading-tight [text-shadow:0_2px_10px_rgba(0,0,0,0.35)] sm:text-5xl">
+          <h1 class="text-4xl font-bold leading-tight [text-shadow:0_2px_10px_rgba(0,0,0,0.35)] sm:text-5xl">
             {{ SITE.name }}<span class="text-gold">金牌燒鵝</span>
           </h1>
           <p class="mt-4 text-lg text-cream/90 [text-shadow:0_1px_6px_rgba(0,0,0,0.4)]">
@@ -90,7 +90,7 @@ const homeFaq = FAQ.slice(0, 3)
       <SectionHeading title="菜單價目" subtitle="金牌燒鵝 · 叉燒 · 滷水類" />
       <div class="grid gap-8 sm:grid-cols-2">
         <div v-for="cat in MENU" :key="cat.id">
-          <h3 class="mb-3 flex items-center gap-2 font-serif text-lg font-bold text-goose">
+          <h3 class="mb-3 flex items-center gap-2 text-lg font-bold text-goose">
             {{ cat.name }}<span class="h-px flex-1 bg-gold/40" />
           </h3>
           <ul class="space-y-2">
@@ -125,7 +125,7 @@ const homeFaq = FAQ.slice(0, 3)
           <PlaceholderImage src="/images/chef.jpg" alt="郭芳銘主廚與金牌燒鵝" />
         </div>
         <div>
-          <h2 class="font-serif text-2xl font-bold text-goose">關於鵝邸家</h2>
+          <h2 class="text-2xl font-bold text-goose">關於鵝邸家</h2>
           <p class="mt-3 leading-relaxed text-neutral-700">
             從一隻鵝的堅持開始，{{ SITE.chef }} 主廚以十年匠心，連續三年（2023-2025）榮獲金牌肯定。
             每一隻燒鵝都是對脆度與火候的職人執著。

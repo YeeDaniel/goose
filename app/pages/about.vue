@@ -20,7 +20,7 @@ const milestones = [
   <div class="container-page py-14">
     <header class="mx-auto max-w-3xl text-center">
       <GoldBadge class="mb-4" />
-      <h1 class="font-serif text-4xl font-bold text-goose">關於鵝邸家</h1>
+      <h1 class="text-4xl font-bold text-goose">關於鵝邸家</h1>
       <p class="mt-4 leading-relaxed text-neutral-700">
         鵝邸家的故事，是一位主廚對「剛出爐那一口酥脆」的堅持。
         <strong>{{ SITE.chef }}</strong> 主廚以 <strong>十年經驗</strong> 淬鍊工藝，
@@ -34,7 +34,7 @@ const milestones = [
         <PlaceholderImage src="/images/chef.jpg" :alt="`${SITE.chef} 主廚`" />
       </div>
       <div>
-        <h2 class="font-serif text-2xl font-bold text-goose">主廚 · {{ SITE.chef }}</h2>
+        <h2 class="text-2xl font-bold text-goose">主廚 · {{ SITE.chef }}</h2>
         <p class="mt-3 leading-relaxed text-neutral-700">
           十年專注一味，從選鵝、風乾到炙烤，堅持港式燒味的火候之道。
           每一隻金牌燒鵝，都是對「剛出爐那一口酥脆」的執著。
@@ -45,18 +45,18 @@ const milestones = [
       </div>
     </div>
 
-    <h2 class="mx-auto mt-16 max-w-2xl font-serif text-2xl font-bold text-goose">品牌歷程</h2>
+    <h2 class="mx-auto mt-16 max-w-2xl text-2xl font-bold text-goose">品牌歷程</h2>
     <ol class="mx-auto mt-6 max-w-2xl space-y-6 border-l-2 border-gold/50 pl-6">
       <li v-for="m in milestones" :key="m.year" class="relative">
         <span class="absolute -left-[31px] top-1 h-4 w-4 rounded-full border-2 border-gold bg-cream" />
-        <p class="font-serif text-lg font-bold text-goose">{{ m.year }}</p>
+        <p class="text-lg font-bold text-goose">{{ m.year }}</p>
         <p class="mt-1 text-neutral-700">{{ m.text }}</p>
       </li>
     </ol>
 
     <!-- 職人現場 -->
     <div class="mx-auto mt-16 max-w-4xl">
-      <h2 class="mb-6 font-serif text-2xl font-bold text-goose">職人現場</h2>
+      <h2 class="mb-6 text-2xl font-bold text-goose">職人現場</h2>
       <div class="grid gap-4 sm:grid-cols-2">
         <div class="aspect-video overflow-hidden rounded-2xl shadow-sm">
           <PlaceholderImage src="/images/chef-action.jpg" alt="主廚現場處理燒鵝" />

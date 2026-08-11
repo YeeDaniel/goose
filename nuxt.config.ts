@@ -28,7 +28,10 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap',
+          // Variable axis (`400..900`) rather than five static weights: the page uses
+          // 400/500/600/700/900 and a CJK family is sliced into ~108 unicode-range
+          // files per weight — one variable axis is 540 font files down to 108.
+          href: 'https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400..900&display=swap',
         },
       ],
     },
