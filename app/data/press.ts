@@ -1,9 +1,15 @@
 // 媒體報導 — interview videos + press coverage. Owner-provided.
 
 export interface PressVideo {
+  /** Competition year, or 鎮瀾宮 for the temple-district piece. Display badge only. */
   label: string
   title: string
   youtubeId: string
+  /** Broadcaster that owns the video. None of these are our uploads. */
+  publisher: string
+  /** Actual YouTube upload timestamp. Later than `label` in every case — the segment
+   *  airs and goes up after the competition it covers, so the two never match. */
+  uploadDate: string
 }
 
 export interface PressArticle {
@@ -28,11 +34,37 @@ export const PRESS_GALLERY: PressPhoto[] = [
   { img: '/images/press-6.jpg', caption: '在地愛心公益捐贈' },
 ]
 
+const DONGFENG = '東風衛視37頻道-樂活搜查線'
+
 export const PRESS_VIDEOS: PressVideo[] = [
-  { label: '2025', title: '2025 金牌燒鵝爭霸賽 專訪', youtubeId: '95S0JgrqrqI' },
-  { label: '2024', title: '2024 金牌燒鵝爭霸賽 專訪', youtubeId: 'n6YGi_JCHNU' },
-  { label: '2023', title: '2023 金牌燒鵝爭霸賽 專訪', youtubeId: 'fMwhfqWSMH8' },
-  { label: '鎮瀾宮', title: '大甲鎮瀾宮 國際點心站', youtubeId: 'b3fiJoEb9hg' },
+  {
+    label: '2025',
+    title: '2025 金牌燒鵝爭霸賽 專訪',
+    youtubeId: '95S0JgrqrqI',
+    publisher: DONGFENG,
+    uploadDate: '2026-03-18T20:52:15-07:00',
+  },
+  {
+    label: '2024',
+    title: '2024 金牌燒鵝爭霸賽 專訪',
+    youtubeId: 'n6YGi_JCHNU',
+    publisher: DONGFENG,
+    uploadDate: '2025-05-21T21:05:49-07:00',
+  },
+  {
+    label: '2023',
+    title: '2023 金牌燒鵝爭霸賽 專訪',
+    youtubeId: 'fMwhfqWSMH8',
+    publisher: DONGFENG,
+    uploadDate: '2024-01-31T19:29:59-08:00',
+  },
+  {
+    label: '鎮瀾宮',
+    title: '大甲鎮瀾宮 國際點心站',
+    youtubeId: 'b3fiJoEb9hg',
+    publisher: '東森新聞 CH51',
+    uploadDate: '2023-04-30T00:40:01-07:00',
+  },
 ]
 
 export const PRESS_ARTICLES: PressArticle[] = [

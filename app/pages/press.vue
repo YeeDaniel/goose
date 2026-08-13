@@ -7,11 +7,14 @@ useSeoMeta({
   title: '媒體報導 · 台中大甲燒鵝專訪',
   description: `${SITE.fullName}媒體報導與電視專訪：金牌燒鵝爭霸賽三連霸、大甲鎮瀾宮國際點心站，Yahoo、UDN、中時、中央社、華視等多家媒體採訪紀實。`,
 })
+
+// The four broadcast interviews, tied back to the Restaurant node (SAO).
+usePressVideoJsonLd()
 </script>
 
 <template>
   <div class="container-page py-14">
-    <SectionHeading title="媒體報導" subtitle="電視專訪 · 新聞紀實 · 三連霸金牌的實力見證" />
+    <SectionHeading :level="1" title="媒體報導" subtitle="電視專訪 · 新聞紀實 · 三連霸金牌的實力見證" />
 
     <!-- Interview videos -->
     <section>

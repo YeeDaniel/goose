@@ -3,7 +3,7 @@
 
 import { SITE } from '~/data/site'
 import { MENU } from '~/data/menu'
-import { PRESS_ARTICLES } from '~/data/press'
+import { PRESS_ARTICLES, PRESS_VIDEOS } from '~/data/press'
 
 function injectJsonLd(data: Record<string, unknown>, id: string) {
   useHead({
@@ -134,6 +134,36 @@ export function useMenuJsonLd() {
       })),
     },
     'jsonld-menu',
+  )
+}
+
+/**
+ * VideoObject for the four broadcast interviews embedded on /press.
+ *
+ * `publisher` is the broadcaster, never us — all four are the channels' own uploads, and
+ * claiming them would be false. What the markup is actually for is `about`, which points
+ * the videos at the Restaurant node: that is the machine-readable form of「三家電視台專訪
+ * 過這家店」, and it is the part an answer engine can cite. Google video rich results are
+ * unlikely here — no single video is the page's main content — so treat that as a bonus,
+ * not the goal.
+ */
+export function usePressVideoJsonLd() {
+  injectJsonLd(
+    {
+      '@context': 'https://schema.org',
+      '@graph': PRESS_VIDEOS.map((v) => ({
+        '@type': 'VideoObject',
+        name: v.title,
+        description: `${SITE.fullName}（${SITE.chef} 主廚）${v.title}，${v.publisher} 播出。`,
+        // hqdefault exists for every video; maxresdefault 404s on older uploads.
+        thumbnailUrl: `https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg`,
+        uploadDate: v.uploadDate,
+        embedUrl: `https://www.youtube-nocookie.com/embed/${v.youtubeId}`,
+        publisher: { '@type': 'Organization', name: v.publisher },
+        about: { '@id': RESTAURANT_ID },
+      })),
+    },
+    'jsonld-press-videos',
   )
 }
 

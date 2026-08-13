@@ -13,7 +13,7 @@ useMenuJsonLd()
 
 <template>
   <div class="container-page py-14">
-    <SectionHeading title="美味菜單" subtitle="金牌燒鵝 · 叉燒 · 滷水類 · 小菜" />
+    <SectionHeading :level="1" title="美味菜單" subtitle="金牌燒鵝 · 叉燒 · 滷水類 · 小菜" />
 
     <!-- Menu reads as a menu: one narrow column of rows, photo as a thumbnail.
          Big appetite shots live on the Home carousel, not here. -->

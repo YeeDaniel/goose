@@ -14,6 +14,7 @@ useFaqJsonLd(FAQ)
 <template>
   <div class="container-page py-14">
     <SectionHeading
+      :level="1"
       title="服務據點與常見問題"
       :subtitle="`${SITE.address.region}${SITE.address.locality}${SITE.address.street} · ${SITE.landmark}旁 · 外帶自取`"
     />

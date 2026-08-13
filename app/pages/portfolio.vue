@@ -21,6 +21,7 @@ const highlights = [
 <template>
   <div class="container-page py-14">
     <SectionHeading
+      :level="1"
       title="金牌饗宴回顧"
       subtitle="過往宴席與紀實 · 品牌實力展示"
     />

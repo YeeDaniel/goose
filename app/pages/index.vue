@@ -9,9 +9,12 @@ useSeoMeta({
     '台中大甲金牌燒鵝｜鵝邸家燒鵝專賣，2023-2025 連續三年金牌得主。郭芳銘主廚十年匠心，週六日上午現烤現斬，皮脆肉嫩。臺中市大甲區新政路25號，鎮瀾宮商圈旁，LINE 預訂外帶自取。',
 })
 
-// Home surfaces menu + FAQ structured data too (SAO).
+// Menu structured data only. FAQPage deliberately does NOT belong here: this page renders
+// three of the seven questions (see `homeFaq` below), and structured data has to match what
+// the visitor can actually see on the page it sits on. Emitting all seven declared four
+// invisible answers — grounds for losing FAQ rich results outright. /location renders the
+// full set and carries the FAQPage.
 useMenuJsonLd()
-useFaqJsonLd(FAQ)
 
 // Carousel = signature dishes flagged across the menu.
 const signatures = MENU.flatMap((c) => c.dishes)
