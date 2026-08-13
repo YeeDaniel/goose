@@ -3,6 +3,7 @@
 
 import { SITE } from '~/data/site'
 import { MENU } from '~/data/menu'
+import { PRESS_ARTICLES } from '~/data/press'
 
 function injectJsonLd(data: Record<string, unknown>, id: string) {
   useHead({
@@ -74,6 +75,18 @@ export function useRestaurantJsonLd() {
       knowsAbout: ['港式燒鵝', '金牌燒鵝爭霸賽', '蜜汁叉燒', '港式滷水'],
       // Ties this site to the Google Business Profile / social entities.
       sameAs: [SITE.facebookUrl, SITE.mapsPlaceUrl, SITE.googleReviewsUrl, SITE.lineUrl],
+      // The 2025.12.07 coverage is syndicated — six outlets, same day, and none of them
+      // linked back, so it passes no link equity. Declaring it here is the next best
+      // thing: it states in machine-readable form that those articles are about *this*
+      // entity, turning unlinked brand mentions into explicit associations.
+      subjectOf: PRESS_ARTICLES.map((a) => ({
+        '@type': 'NewsArticle',
+        headline: a.title,
+        url: a.url,
+        // press.ts stores dates as 2025.12.07 for display; schema.org wants ISO 8601.
+        ...(a.date ? { datePublished: a.date.replace(/\./g, '-') } : {}),
+        publisher: { '@type': 'Organization', name: a.outlet },
+      })),
     },
     'jsonld-restaurant',
   )
