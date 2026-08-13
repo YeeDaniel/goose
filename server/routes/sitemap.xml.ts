@@ -2,7 +2,10 @@ import { SITE } from '../../app/data/site'
 
 // Generated sitemap. Reflects SITE.url — update the canonical domain in
 // app/data/site.ts and this stays correct.
-const ROUTES = ['', '/about', '/menu', '/portfolio', '/press', '/location']
+// Home is '/' rather than '': the rendered canonical is `https://edijia.com/`, and a
+// sitemap that advertises `https://edijia.com` hands a crawler a second spelling of the
+// same page to reconcile.
+const ROUTES = ['/', '/about', '/menu', '/portfolio', '/press', '/location']
 
 export default defineEventHandler((event) => {
   const base = SITE.url.replace(/\/$/, '')
