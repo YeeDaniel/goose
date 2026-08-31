@@ -31,7 +31,11 @@ const milestones = [
     <!-- Chef intro. -->
     <div class="mx-auto mt-12 grid max-w-4xl items-center gap-8 md:grid-cols-2">
       <div class="aspect-[4/5] overflow-hidden rounded-2xl shadow-sm">
-        <PlaceholderImage src="/images/chef.jpg" :alt="`${SITE.chef} 主廚`" />
+        <PlaceholderImage
+          src="/images/chef.jpg"
+          :alt="`${SITE.chef} 主廚`"
+          sizes="(min-width: 768px) 432px, 100vw"
+        />
       </div>
       <div>
         <h2 class="text-2xl font-bold text-goose">主廚 · {{ SITE.chef }}</h2>
@@ -59,10 +63,18 @@ const milestones = [
       <h2 class="mb-6 text-2xl font-bold text-goose">職人現場</h2>
       <div class="grid gap-4 sm:grid-cols-2">
         <div class="aspect-video overflow-hidden rounded-2xl shadow-sm">
-          <PlaceholderImage src="/images/chef-action.jpg" alt="主廚現場處理燒鵝" />
+          <PlaceholderImage
+            src="/images/chef-action.jpg"
+            alt="主廚現場處理燒鵝"
+            sizes="(min-width: 928px) 440px, (min-width: 640px) 50vw, 100vw"
+          />
         </div>
         <div class="aspect-video overflow-hidden rounded-2xl shadow-sm">
-          <PlaceholderImage src="/images/oven.jpg" alt="炭爐現烤燒鵝" />
+          <PlaceholderImage
+            src="/images/oven.jpg"
+            alt="炭爐現烤燒鵝"
+            sizes="(min-width: 928px) 440px, (min-width: 640px) 50vw, 100vw"
+          />
         </div>
       </div>
     </div>

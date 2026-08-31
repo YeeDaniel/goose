@@ -100,14 +100,43 @@ app/
   layouts/default.vue  header + slot + footer + floating LineCta + fixed BottomNav
   pages/               index · about · menu · portfolio · location  (file-based routing)
   components/          AppHeader, AppFooter, BottomNav, LineCta, LineButton, GoldBadge,
-                       DishCarousel, SectionHeading, FaqAccordion  (auto-imported)
+                       AppImage, PlaceholderImage, DishCarousel, SectionHeading,
+                       FaqAccordion, YoutubeEmbed  (auto-imported)
   composables/useJsonLd.ts   useRestaurantJsonLd / useMenuJsonLd / useFaqJsonLd
+  utils/image.ts       imageMeta / imageSrcset — builds srcsets from the image manifest
   data/                site.ts (NAP, brand facts, LINE URL) · menu.ts · faq.ts
+                       image-manifest.ts · font.ts  ← GENERATED, do not hand-edit
   assets/css/tailwind.css    @tailwind layers + component classes (.btn-line, .tap-target …)
+scripts/               optimize-images.mjs · subset-font.mjs  (asset pipeline, run by hand)
+public/images/opt/     GENERATED responsive AVIF/WebP variants (content-hashed filenames)
+public/fonts/          GENERATED Noto Serif TC subset (content-hashed filename)
 nuxt.config.ts         nitro preset 'cloudflare_pages', tailwind module, zh-Hant head
 tailwind.config.ts     design tokens: goose / gold / cream / line colors, 44px touch min
 docs/                  design-spec.md · dev-spec.md  (transcribed source specs)
 ```
+
+## Performance rules
+
+Mobile Lighthouse sat at 56 because a 953 KB hero JPEG and 1.7 MB of Google-Fonts CJK
+slices were shipped as-is. Three things keep it in the 90s — none of them are automatic:
+
+- **Photos go through `AppImage`, never a bare `<img>`.** It emits `<picture>` over the
+  pre-generated variants and needs a `sizes` that matches the slot it renders in; a wrong
+  `sizes` silently downloads the largest rung. After adding or replacing anything in
+  `public/images`, run **`npm run images`** and commit the output.
+- **The font is a self-hosted subset of exactly the characters this site renders.** After
+  editing any visible copy — menu items, FAQ answers, headings — run **`npm run fonts`**
+  and commit, or the new characters fall back to the system serif.
+- **Most pages ship zero JavaScript** (`noScripts` route rules in `nuxt.config.ts`). Every
+  interaction on them is native HTML: `<details>` for the header menu and the FAQ,
+  scroll-snap for the carousel, plain `<a>` everywhere else. **Do not reach for a JS
+  widget library on those pages** — it would put hydration, and ~500ms of blocking time,
+  back on the critical path. `/press` is the one page that keeps its bundle, because the
+  click-to-load YouTube facade needs it.
+
+Both asset scripts are deliberately **outside** `npm run build`: Cloudflare Pages' git
+webhook is the only deploy trigger this project has, and a build-time image or font step
+that failed on the runner would take deployments down with it.
 
 ## Commands
 
@@ -118,7 +147,9 @@ npm run build      # production build → dist/ (Cloudflare Pages preset)
 npm run preview    # preview the build
 npm run generate   # full static prerender
 npm run typecheck  # vue-tsc strict type check
+npm run images     # regenerate responsive AVIF/WebP variants — after touching public/images
+npm run fonts      # rebuild the Noto Serif TC subset — after changing any visible copy
 ```
 
-Deploy: push to `main` → Cloudflare Pages auto-builds. Local preview of the Pages output:
+Deploy: push to `master` → Cloudflare Pages auto-builds. Local preview of the Pages output:
 `npx wrangler pages dev dist`.

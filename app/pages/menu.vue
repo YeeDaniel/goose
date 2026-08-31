@@ -31,7 +31,7 @@ useMenuJsonLd()
           >
             <!-- Only 燒鵝 / 叉燒 carry photos; 滷水類 and 小菜 read as plain text rows. -->
             <div v-if="dish.img" class="h-16 w-16 shrink-0 overflow-hidden rounded-xl sm:h-20 sm:w-20">
-              <PlaceholderImage :src="dish.img" :alt="dish.name" />
+              <PlaceholderImage :src="dish.img" :alt="dish.name" sizes="(min-width: 640px) 80px, 64px" />
             </div>
 
             <div class="min-w-0 flex-1">

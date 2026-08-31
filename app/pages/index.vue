@@ -22,17 +22,35 @@ const signatures = MENU.flatMap((c) => c.dishes)
   .map((d) => ({ name: d.name, note: d.description, img: d.img }))
 
 const homeFaq = FAQ.slice(0, 3)
+
+// The hero is the LCP element on every phone that opens the site. Nothing in the HTML
+// tells the preload scanner that before it has parsed down to the <picture>, so warm it
+// from the head — same candidate list as the <source>, or the browser fetches it twice.
+const HERO = '/images/hero-bg.jpg'
+useHead({
+  link: [
+    {
+      rel: 'preload',
+      as: 'image',
+      type: 'image/avif',
+      imagesrcset: imageSrcset(HERO, 'avif'),
+      imagesizes: '100vw',
+      fetchpriority: 'high',
+    },
+  ],
+})
 </script>
 
 <template>
   <div>
     <!-- Hero — full-bleed 2023 金牌燒鵝爭霸賽 award photo (design-spec §1). -->
     <section class="relative overflow-hidden text-cream">
-      <img
-        src="/images/hero-bg.jpg"
+      <AppImage
+        :src="HERO"
         alt="鵝邸家 金牌燒鵝 現烤吊掛"
-        fetchpriority="high"
-        class="absolute inset-0 h-full w-full object-cover object-center"
+        sizes="100vw"
+        priority
+        class="absolute inset-0"
       />
       <!-- Overlays for text legibility — neutral dark, weighted left (not a red wash). -->
       <!-- Phones read full-width, so darken top-to-bottom there; the left-weighted
@@ -125,7 +143,11 @@ const homeFaq = FAQ.slice(0, 3)
     <section class="bg-white/50 py-14">
       <div class="container-page grid items-center gap-8 md:grid-cols-2">
         <div class="mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl shadow-sm">
-          <PlaceholderImage src="/images/chef.jpg" alt="郭芳銘主廚與金牌燒鵝" />
+          <PlaceholderImage
+            src="/images/chef.jpg"
+            alt="郭芳銘主廚與金牌燒鵝"
+            sizes="(min-width: 448px) 384px, 100vw"
+          />
         </div>
         <div>
           <h2 class="text-2xl font-bold text-goose">關於鵝邸家</h2>

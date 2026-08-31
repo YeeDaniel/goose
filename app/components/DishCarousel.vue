@@ -23,7 +23,13 @@ defineProps<{ slides: Slide[] }>()
           <div class="aspect-[4/3] overflow-hidden">
             <!-- No 「照片準備中」 chip on the home page — it reads as an unfinished
                  site to customers. The branded watermark carries the empty slot. -->
-            <PlaceholderImage variant="dish" :src="slide.img" :alt="slide.name" :pending="false" />
+            <PlaceholderImage
+              variant="dish"
+              :src="slide.img"
+              :alt="slide.name"
+              :pending="false"
+              sizes="(min-width: 640px) 320px, 288px"
+            />
           </div>
           <div class="flex-1 bg-white/70 p-4">
             <p class="text-lg font-bold text-goose">{{ slide.name }}</p>

@@ -10,7 +10,12 @@ import { SITE } from '~/data/site'
   <section class="overflow-hidden rounded-3xl bg-goose text-cream shadow-lg">
     <div class="grid md:grid-cols-2">
       <div class="min-h-56">
-        <PlaceholderImage src="/images/award.jpg" :alt="`${SITE.awardCompetition} 金牌領獎`" variant="medal" />
+        <PlaceholderImage
+          src="/images/award.jpg"
+          :alt="`${SITE.awardCompetition} 金牌領獎`"
+          variant="medal"
+          sizes="(min-width: 1024px) 496px, (min-width: 768px) 50vw, 100vw"
+        />
       </div>
 
       <div class="flex flex-col justify-center gap-3 p-8">

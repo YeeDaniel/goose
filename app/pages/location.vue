@@ -72,7 +72,11 @@ useFaqJsonLd(FAQ)
     <!-- Local flavour: 大甲鎮瀾宮 商圈 -->
     <figure class="mt-10 grid items-center gap-6 rounded-2xl bg-white/60 p-5 shadow-sm sm:grid-cols-2">
       <div class="mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden rounded-xl">
-        <PlaceholderImage src="/images/landmark.jpg" alt="大甲鎮瀾宮商圈 鵝邸家現烤燒鵝" />
+        <PlaceholderImage
+          src="/images/landmark.jpg"
+          alt="大甲鎮瀾宮商圈 鵝邸家現烤燒鵝"
+          sizes="(min-width: 400px) 320px, 100vw"
+        />
       </div>
       <figcaption>
         <h3 class="text-lg font-bold text-goose">就在大甲鎮瀾宮商圈</h3>

@@ -41,7 +41,7 @@ usePressVideoJsonLd()
       <ul class="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
         <li v-for="p in PRESS_GALLERY" :key="p.img" class="overflow-hidden rounded-2xl bg-white/60 shadow-sm">
           <div class="aspect-[3/4] overflow-hidden">
-            <PlaceholderImage :src="p.img" :alt="p.caption" />
+            <PlaceholderImage :src="p.img" :alt="p.caption" sizes="(min-width: 1024px) 317px, 50vw" />
           </div>
           <p class="px-3 py-2.5 text-xs text-neutral-600 sm:px-4 sm:py-3 sm:text-sm">{{ p.caption }}</p>
         </li>

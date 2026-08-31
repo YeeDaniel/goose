@@ -29,3 +29,6 @@ node_modules
 
 # Raw source photos (categorized subfolders; optimized copies live in public/images)
 goose_photo/
+
+# Font source cache for scripts/subset-font.mjs (re-downloaded on demand)
+.fonts-src

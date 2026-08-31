@@ -9,6 +9,8 @@ withDefaults(
     alt?: string
     /** How the photo fills the slot. 'contain' shows the whole photo (no crop). */
     fit?: 'cover' | 'contain'
+    /** Rendered width of the slot, passed straight to AppImage's `sizes`. */
+    sizes?: string
     /** Watermark motif (placeholder only). */
     variant?: 'goose' | 'medal' | 'dish'
     /** Small caption chip (placeholder only). */
@@ -16,19 +18,12 @@ withDefaults(
     /** Show the "照片準備中" tag (placeholder only). */
     pending?: boolean
   }>(),
-  { src: '', alt: '', fit: 'cover', variant: 'goose', label: '', pending: true },
+  { src: '', alt: '', fit: 'cover', sizes: '100vw', variant: 'goose', label: '', pending: true },
 )
 </script>
 
 <template>
-  <img
-    v-if="src"
-    :src="src"
-    :alt="alt"
-    loading="lazy"
-    class="h-full w-full"
-    :class="fit === 'contain' ? 'object-contain' : 'object-cover'"
-  />
+  <AppImage v-if="src" :src="src" :alt="alt" :fit="fit" :sizes="sizes" />
 
   <div
     v-else
