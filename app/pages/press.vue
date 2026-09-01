@@ -64,7 +64,7 @@ usePressVideoJsonLd()
               <ArrowTopRightOnSquareIcon class="h-5 w-5 shrink-0 text-neutral-400" aria-hidden="true" />
             </div>
             <p class="mt-2 text-sm text-neutral-600">{{ a.title }}</p>
-            <p v-if="a.date" class="mt-3 text-xs text-neutral-400">{{ a.date }}</p>
+            <p v-if="a.date" class="mt-3 text-xs text-neutral-500">{{ a.date }}</p>
           </a>
         </li>
       </ul>

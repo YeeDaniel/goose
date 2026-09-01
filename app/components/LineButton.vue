@@ -8,6 +8,11 @@ import { SITE } from '~/data/site'
 // (Android WebView needs setSupportMultipleWindows/onCreateWindow; iOS WKWebView likewise).
 // The tap then does nothing at all. Same-tab navigation works everywhere and gives the OS
 // the cleanest hand-off from the lin.ee universal link into the LINE app.
+//
+// The aria-label has to *begin with* `label`, the text a sighted visitor reads. It used to
+// be a fixed string that did not contain it, which fails WCAG 2.5.3 Label in Name: someone
+// driving the phone by voice says what they can see — "點 LINE 預約點餐" — and nothing
+// happens, because the accessible name never contained those words.
 withDefaults(defineProps<{ label?: string; block?: boolean; variant?: 'solid' | 'light' }>(), {
   label: 'LINE 預約／點餐',
   block: false,
@@ -19,7 +24,7 @@ withDefaults(defineProps<{ label?: string; block?: boolean; variant?: 'solid' | 
   <a
     :href="SITE.lineUrl"
     :class="[variant === 'light' ? 'btn-light' : 'btn-primary', { 'w-full': block }]"
-    aria-label="開啟 LINE 官方帳號預約或點餐"
+    :aria-label="`${label}（開啟 LINE 官方帳號）`"
   >
     <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
       <path

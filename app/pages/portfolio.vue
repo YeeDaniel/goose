@@ -45,7 +45,10 @@ const highlights = [
           />
         </div>
         <div class="p-5">
-          <h3 class="text-lg font-bold text-goose">{{ item.title }}</h3>
+          <!-- h2, not h3: these cards sit directly under the page h1 with no section
+               heading between them, and a screen reader announcing a level skip reads as
+               a missing section. Size comes from the class, not the tag. -->
+          <h2 class="text-lg font-bold text-goose">{{ item.title }}</h2>
           <p class="mt-1 text-sm leading-relaxed text-neutral-600">{{ item.note }}</p>
         </div>
       </li>

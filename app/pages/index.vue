@@ -123,7 +123,7 @@ useHead({
               <span class="text-neutral-700">{{ dish.name }}</span>
               <span class="whitespace-nowrap font-semibold text-goose">
                 NT$ {{ dish.price
-                }}<span v-if="dish.unit" class="ml-0.5 text-xs font-normal text-neutral-400">/{{ dish.unit }}</span>
+                }}<span v-if="dish.unit" class="ml-0.5 text-xs font-normal text-neutral-500">/{{ dish.unit }}</span>
               </span>
             </li>
           </ul>

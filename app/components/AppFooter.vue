@@ -12,12 +12,16 @@ const nav = [
 </script>
 
 <template>
-  <footer class="border-t border-black/5 bg-goose text-cream/90">
+  <!-- Cream runs at full strength on this red rather than dimmed. 琥珀紅 is dark enough
+       that cream/80 blends to 4.18:1 and cream/60 to 3.00:1, both under WCAG AA's 4.5:1
+       floor; full cream is 5.66:1 and cream/90 is 4.89:1. Dimming the ink here bought a
+       softness the contrast budget cannot pay for. -->
+  <footer class="border-t border-black/5 bg-goose text-cream">
     <div class="container-page grid gap-6 py-10 sm:grid-cols-2 lg:grid-cols-4">
       <div>
         <p class="text-xl font-bold text-gold">{{ SITE.name }}</p>
         <p class="mt-1 text-sm">{{ SITE.tagline }}</p>
-        <p class="mt-3 text-sm leading-relaxed text-cream/70">
+        <p class="mt-3 text-sm leading-relaxed text-cream/90">
           {{ SITE.chef }} 主廚 · {{ SITE.yearsOfCraft }} 年匠心
         </p>
       </div>
@@ -29,7 +33,7 @@ const nav = [
           <li v-for="item in nav" :key="item.to">
             <NuxtLink
               :to="item.to"
-              class="block py-3 text-cream/80 transition hover:text-gold sm:py-0"
+              class="block py-3 text-cream transition hover:text-gold sm:py-0"
             >
               {{ item.label }}
             </NuxtLink>
@@ -39,7 +43,7 @@ const nav = [
 
       <div class="text-sm">
         <p class="font-semibold text-gold">營業時間</p>
-        <ul class="mt-2 space-y-1 text-cream/80">
+        <ul class="mt-2 space-y-1 text-cream">
           <li v-for="h in SITE.openingHours" :key="h.days">{{ h.days }}：{{ h.time }}</li>
         </ul>
       </div>
@@ -50,7 +54,7 @@ const nav = [
         <p class="mt-1 sm:mt-2">
           <a
             :href="`tel:${SITE.phoneE164}`"
-            class="block py-3 text-cream/80 transition hover:text-gold sm:py-0"
+            class="block py-3 text-cream transition hover:text-gold sm:py-0"
           >
             電話：{{ SITE.phone }}
           </a>
@@ -58,7 +62,7 @@ const nav = [
         <p>
           <a
             :href="SITE.mapsDirectionsUrl"
-            class="block py-3 text-cream/80 transition hover:text-gold sm:py-0"
+            class="block py-3 text-cream transition hover:text-gold sm:py-0"
           >
             {{ SITE.address.region }}{{ SITE.address.locality }}{{ SITE.address.street }}
           </a>
@@ -69,14 +73,14 @@ const nav = [
         <a
           v-if="SITE.facebookUrl"
           :href="SITE.facebookUrl"
-          class="mt-1 inline-block py-3 text-sm text-cream/80 underline-offset-4 hover:text-gold hover:underline sm:mt-3 sm:py-0"
+          class="mt-1 inline-block py-3 text-sm text-cream underline-offset-4 hover:text-gold hover:underline sm:mt-3 sm:py-0"
         >
           Facebook 粉絲專頁 →
         </a>
       </div>
     </div>
 
-    <div class="border-t border-white/10 py-4 text-center text-xs text-cream/60">
+    <div class="border-t border-white/10 py-4 text-center text-xs text-cream/90">
       © {{ new Date().getFullYear() }} {{ SITE.name }} {{ SITE.nameEn }}. All rights reserved.
     </div>
   </footer>
