@@ -50,7 +50,7 @@ export const MENU: MenuCategory[] = [
       {
         name: '蜜汁叉燒',
         description: '外緣焦香、內裡軟嫩，鹹甜入味。',
-        price: 450,
+        price: 500,
         unit: '一斤',
         signature: true,
         // TODO: add a portrait 蜜汁叉燒 photo when available.

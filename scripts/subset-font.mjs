@@ -25,8 +25,12 @@ const OUT_DIR = 'public/fonts'
 const MANIFEST = 'app/data/font.ts'
 
 // Everything that can end up on screen lives in the components and the data modules.
-// Scanning the raw file text is a superset — it also picks up code and comments, which
-// only ever add cheap Latin glyphs.
+// Scanning the raw file text is a superset: it also picks up code and comments, so a
+// Chinese code comment quietly adds its characters to the subset and changes the output
+// hash. That is deliberate. Stripping comments first would mean parsing Vue SFCs well
+// enough to tell a real `//` comment from the one inside `https://…` in a template, and
+// getting that wrong drops a glyph from live copy — a far worse failure than carrying a
+// few unused ones.
 const SCAN_ROOTS = ['app']
 const SCAN_EXT = /\.(vue|ts)$/
 
