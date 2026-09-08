@@ -2,6 +2,25 @@
 import { FONT_FACE_CSS, FONT_URL } from './app/data/font'
 import { SITE } from './app/data/site'
 
+// Headers every HTML response carries. Attached route by route on purpose: a `/**` catch-all
+// would be the obvious way to write this and it would quietly break the asset caching above.
+// Cloudflare applies every matching `_headers` rule and the last one wins for a repeated
+// header, and Nitro writes the shallowest rule last — so `/**` would land after `/images/*`,
+// `/fonts/*` and `/_nuxt/*` and reset all three to max-age=0.
+const HTML_HEADERS = {
+  // The pages are rendered per request and carry no etag or last-modified, so there is
+  // nothing to revalidate against and this reads as "always refetch". That is already what
+  // browsers were doing — the responses previously had no cache-control at all, which left
+  // the decision to heuristic caching. Stating it removes the guesswork, and keeps a stale
+  // menu price out of somebody's browser.
+  'cache-control': 'public, max-age=0, must-revalidate',
+  'x-content-type-options': 'nosniff',
+  'referrer-policy': 'strict-origin-when-cross-origin',
+  // Nothing here is meant to be framed. The site is the parent for the Maps and YouTube
+  // iframes, which this does not affect.
+  'x-frame-options': 'SAMEORIGIN',
+}
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-01',
   devtools: { enabled: true },
@@ -71,11 +90,13 @@ export default defineNuxtConfig({
       // behind `v-if`. A CSS-only version (a closed <details>) does not work: a hidden
       // iframe still loads, so all four YouTube players downloaded anyway — measured at
       // 5.4 MB over 75 requests, against 0.5 MB with the facade intact.
-      '/': { noScripts: true },
-      '/about': { noScripts: true },
-      '/menu': { noScripts: true },
-      '/portfolio': { noScripts: true },
-      '/location': { noScripts: true },
+      '/': { noScripts: true, headers: HTML_HEADERS },
+      '/about': { noScripts: true, headers: HTML_HEADERS },
+      '/menu': { noScripts: true, headers: HTML_HEADERS },
+      '/portfolio': { noScripts: true, headers: HTML_HEADERS },
+      '/location': { noScripts: true, headers: HTML_HEADERS },
+      // Keeps its client bundle (see above), but the headers are the same.
+      '/press': { headers: HTML_HEADERS },
     },
   },
 
