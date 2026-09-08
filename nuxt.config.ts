@@ -32,10 +32,17 @@ export default defineNuxtConfig({
     // Nitro's generated `_headers` covers `/_nuxt/*` and nothing else, so photos fell
     // through to the Pages default and were revalidated on every visit.
     routeRules: {
-      // Variant filenames carry a hash of their source (scripts/optimize-images.mjs),
-      // so replacing a photo changes the URL. Safe to pin forever.
+      // 30 days, not the year the hashed variant filenames would justify, because a year
+      // is not achievable from here: Cloudflare applies every matching `_headers` rule and
+      // the last one wins for a repeated header, while Nitro writes the deeper rule first
+      // (it sorts by segment count, descending). `/images/*` therefore overrides the
+      // max-age of `/images/opt/*` whatever this says — the deployed value was measured at
+      // 2592000. Declaring 31536000 here only made the config lie. `immutable` does survive
+      // the merge and is the half that matters: it stops revalidation within the window.
+      // Buying the full year would mean moving the variants out from under /images/, which
+      // is 180-odd file renames to save one 304 a month.
       '/images/opt/**': {
-        headers: { 'cache-control': 'public, max-age=31536000, immutable' },
+        headers: { 'cache-control': 'public, max-age=2592000, immutable' },
       },
       // The originals keep stable names — they are the <img> fallback and og.jpg — so
       // cache them long but not immutably.

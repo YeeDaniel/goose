@@ -10,7 +10,11 @@ const base = SITE.url.replace(/\/$/, '')
 // 200 — resolve to one canonical. Echoing route.path verbatim made each variant point at
 // itself, i.e. two indexable copies of every page. The leading `(.)` keeps the home page
 // as `/` rather than reducing it to the bare origin.
-const canonical = computed(() => base + route.path.replace(/(.)\/$/, '$1'))
+//
+// Lowercased for the same reason: /MENU and /Menu are answered with 200 too, and paths are
+// case-sensitive to search engines, so each casing was declaring itself canonical. Every
+// route in this site is lowercase, so folding the case cannot collide with a real page.
+const canonical = computed(() => base + route.path.replace(/(.)\/$/, '$1').toLowerCase())
 
 useSeoMeta({
   description: SITE.description,
