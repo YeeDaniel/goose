@@ -44,13 +44,18 @@ useFaqJsonLd(FAQ)
           <div>
             <dt class="font-semibold text-neutral-800">電話</dt>
             <dd>
-              <!-- tel: so phones dial straight from the page. -->
+              <!-- tel: so phones dial straight from the page. The number stays exactly as
+                   prominent as it was — regulars rely on it — but it now carries the reason
+                   to choose LINE instead, which is the thing that actually shifts the habit. -->
               <a
                 :href="`tel:${SITE.phoneE164}`"
                 class="inline-flex min-h-touch items-center text-goose underline-offset-4 hover:underline"
               >
                 {{ SITE.phone }}
               </a>
+              <p class="text-xs leading-relaxed text-neutral-500">
+                假日上午爐邊忙碌，電話不一定能即時接聽。用 LINE 預訂最不會漏單，我們看到就會回覆。
+              </p>
             </dd>
           </div>
           <div>

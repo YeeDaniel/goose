@@ -35,10 +35,14 @@ export const FAQ: FaqItem[] = [
     answer:
       '營業時間是每週六、週日上午 07:00 至 12:00，週一至週五公休。燒鵝當日現烤、售完為止，假日早上經常提早賣完，建議先用 LINE 官方帳號預訂並約好取餐時間，到店免久候。',
   },
+  // Phrased the way customers actually ask it. Most orders still arrive by phone out of
+  // habit, and a call missed while the chef is at the oven is an order gone for good —
+  // a LINE message just waits. Saying plainly why LINE is better *for the customer*
+  // moves more people than another "歡迎加入" ever did.
   {
-    question: '如何預訂外帶點餐？',
+    question: '要打電話訂，還是用 LINE 訂？',
     answer:
-      '請點擊網站右下角的「LINE 預約／點餐」按鈕，直接於 LINE 官方帳號完成外帶預訂與取餐時間安排，快速又方便。',
+      '兩種都可以，建議用 LINE 預訂。假日上午爐邊正忙，電話不一定能即時接聽；用 LINE 預訂最不會漏單，我們看到就會回覆，您也可以先看過菜單再決定要什麼。請點網站右下角的「LINE 預約／點餐」按鈕，直接於 LINE 官方帳號完成外帶預訂與取餐時間安排。',
   },
   {
     question: '鵝邸家的招牌是什麼？',
